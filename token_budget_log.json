@@ -1,0 +1,16 @@
+{
+  "tarih": "2026-03-04",
+  "toplam_token": 9078,
+  "toplam_istek": 4,
+  "gunluk_limit": 500000,
+  "uyari_gonderildi": false,
+  "modeller": {
+    "llama-3.1-8b-instant": {
+      "toplam_token": 9078,
+      "prompt_token": 7876,
+      "completion_token": 1202,
+      "istek_sayisi": 4,
+      "maliyet_birim": 1
+    }
+  }
+}

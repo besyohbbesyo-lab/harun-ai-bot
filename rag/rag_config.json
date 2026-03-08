@@ -1,0 +1,6 @@
+{
+  "kb_path": "rag/kb.jsonl",
+  "top_k": 4,
+  "max_chars_per_chunk": 350,
+  "min_chars_per_chunk": 80
+}

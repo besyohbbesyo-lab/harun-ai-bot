@@ -1,0 +1,77 @@
+# ============================================================
+# Harun AI Bot — Git Ignore
+# ============================================================
+
+# Ortam degiskenleri (API key'ler, tokenlar)
+.env
+
+# Log dosyalari
+*.log
+bot_log.txt
+guvenlik_log.json
+cikti.txt
+
+# Durum / state dosyalari
+api_rotator_state.json
+policy_state.json
+strategy_data.json
+reward_history.json
+prompt_data.json
+model_performans.json
+proaktif_ayar.json
+proaktif_oneri_log.json
+privacy_mode.json
+etm_buffer.json
+token_budget_log.json
+token_budget_log.jsonl
+kullanici_soru_log.jsonl
+
+# Egitim verileri (hassas olabilir)
+egitim_audit.jsonl
+egitim_verisi.jsonl
+hata_verisi.jsonl
+finetuning_data.jsonl
+
+# Yedek ve veri klasorleri (buyuk binary dosyalar)
+backups/
+memory_db/
+data/
+temp_ses/
+sandbox/
+
+# Export dosyalari
+exports/
+dataset/
+dataset_clean/
+finetuning_approved_*.jsonl
+
+# Binary / executable
+*.exe
+ffmpeg.exe
+ffprobe.exe
+*.bin
+*.zip
+DATASET_CLEANER_ZIP.zip
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Sanal ortam
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Pytest
+.pytest_cache/

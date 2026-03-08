@@ -1,0 +1,56 @@
+# ============================================================
+# Harun AI Bot — .dockerignore
+# ============================================================
+
+# Ortam ve gizli dosyalar
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Log ve geçici dosyalar
+*.log
+bot_log*.txt
+*.tmp
+
+# Docker (kendini kopyalamasın)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Dokümantasyon (runtime'da gereksiz)
+*.md
+*.docx
+HarunAI_Master_Plan.docx
+HARUN_AI_BOT_HANDOFF.md
+
+# Fine-tuning çıktıları (büyük dosyalar)
+*.gguf
+*.bin
+*.safetensors
+model_output/
+
+# Test dosyaları
+test_*.py
+tests/
+
+# Yedekler
+*.bak
+*.old

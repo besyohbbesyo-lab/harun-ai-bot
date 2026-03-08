@@ -1,0 +1,60 @@
+# pyproject.toml — S6-8: Ruff + mypy konfigurasyonu
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+exclude = [
+    ".git",
+    "__pycache__",
+    "*.pyc",
+    "backups",
+    "exports",
+    "data",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",   # line too long
+    "B008",   # function call in default argument
+    "UP007",  # X | Y yerine Optional
+    "F401",   # unused import (globals.py bridge icin)
+    "E402",   # module level import not at top
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["core", "handlers", "services", "rag"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+no_strict_optional = true
+warn_return_any = false
+exclude = [
+    "backups/",
+    "exports/",
+    "data/",
+    "bot_config.py",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]

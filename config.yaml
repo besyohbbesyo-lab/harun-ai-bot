@@ -1,0 +1,62 @@
+# ══════════════════════════════════════════════════════════
+# Harun AI Bot — Merkezi Konfigürasyon
+# ══════════════════════════════════════════════════════════
+# Bu dosyayi duzenleyerek model, timeout, limit degerlerini
+# kod degistirmeden ayarlayabilirsiniz.
+# ══════════════════════════════════════════════════════════
+
+# ─── GROQ CLOUD MODELLER ─────────────────────────────────
+groq:
+  models:
+    - id: "llama-3.3-70b-versatile"
+      max_tokens: 2000
+      maliyet: 3        # 1=ucuz, 3=pahali
+    - id: "llama-3.1-8b-instant"
+      max_tokens: 2000
+      maliyet: 1
+    - id: "meta-llama/llama-4-scout-17b-16e-instruct"
+      max_tokens: 2000
+      maliyet: 2
+
+  # Gorev turu → tercih edilen model indexi (0=70b, 1=8b, 2=scout)
+  task_model_pref:
+    kod: 0
+    sunum: 0
+    word: 0
+    arastirma: 0
+    planner: 0
+    pdf: 0
+    sohbet: 1
+    genel: 1
+    basit: 1
+
+  # Fallback varsayilan degerleri
+  default_model: "llama-3.1-8b-instant"
+  default_max_tokens: 2000
+
+# ─── OLLAMA (LOKAL MODEL) ────────────────────────────────
+ollama:
+  url: "http://localhost:11434/api/generate"
+  timeout: 120          # saniye
+  default_model: "haervwe/GLM-4.6V-Flash-9B"
+
+# ─── MODEL SECIM ESIKLERI ────────────────────────────────
+model_secim:
+  lokal_max_tokens: 50     # token tahmini bu altindaysa lokal yeterli
+  cloud_min_tokens: 200    # bu ustundeyse cloud tercih et
+
+# ─── GUVENLIK / RATE LIMIT ───────────────────────────────
+guvenlik:
+  rate_limit_pencere: 60   # saniye
+  rate_limit_maksimum: 10  # pencere icinde max mesaj
+
+# ─── LOG AYARLARI ────────────────────────────────────────
+log:
+  max_boyut_mb: 10         # MB, asarsa rotate
+  max_yedek: 5             # kac yedek tutulsun
+  dosya: "bot_log.txt"
+
+# ─── GENEL ───────────────────────────────────────────────
+bot:
+  baslangic_mesaji: "Harun AI Bot aktif!"
+  proaktif_zeka_aralik_dk: 30  # dakika

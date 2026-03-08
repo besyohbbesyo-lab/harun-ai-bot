@@ -1,0 +1,28 @@
+# ============================================================
+# Harun AI — Code Sandbox İmajı
+# ============================================================
+# Kullanıcı kodunu güvenli çalıştırmak için minimal Python imajı.
+# Build: docker build -f Dockerfile.sandbox -t harun-ai-sandbox:1 .
+# ============================================================
+
+FROM python:3.11-slim
+
+# Gereksiz paketleri kaldır, sadece Python kalsın
+RUN apt-get update && \
+    apt-get remove -y --purge \
+        wget curl net-tools \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+
+# nonroot kullanıcı
+RUN groupadd --gid 2000 sandbox && \
+    useradd --uid 2000 --gid sandbox --shell /bin/false --no-create-home sandbox
+
+# Çalışma dizini
+WORKDIR /sandbox
+
+# nonroot kullanıcıya geç
+USER sandbox
+
+# Varsayılan komut yok — dışarıdan verilecek
+ENTRYPOINT ["python"]

@@ -1,0 +1,62 @@
+# ============================================================
+# Harun AI Bot — .dockerignore
+# Docker image'a GİRMESİN istediğimiz dosyalar
+# ============================================================
+
+# --- GÜVENLİK: Hassas dosyalar kesinlikle image'a girmesin ---
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# --- Git ---
+.git
+.gitignore
+.gitattributes
+
+# --- Python cache ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Test dosyaları (runtime'da gerekli değil) ---
+tests/
+.coverage
+htmlcov/
+coverage.xml
+
+# --- Geliştirme araçları ---
+.pre-commit-config.yaml
+pyproject.toml
+.editorconfig
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Dokümantasyon ---
+*.md
+docs/
+
+# --- Dataset / log / export (volume ile mount edilecek) ---
+logs/
+exports/
+dataset/
+data/
+
+# --- Docker'ın kendisi ---
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini

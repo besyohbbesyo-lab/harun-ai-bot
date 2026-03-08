@@ -1,0 +1,142 @@
+version: '3.8'
+# Harun AI — docker-compose.staging.yml
+# S6-4: Staging Environment
+# Kullanim: docker-compose -f docker-compose.staging.yml up -d
+# Production'dan farki:
+#   - BOT_ENV=staging
+#   - Ayri volume'lar (staging_*)
+#   - Port farkli: Grafana 3001, Prometheus 9091
+#   - Daha az kaynak limiti
+#   - LOG_LEVEL=DEBUG
+
+services:
+  # ── Bot (Staging) ─────────────────────────────────────────────
+  bot:
+    build: .
+    container_name: harun_ai_bot_staging
+    env_file: .env.staging
+    environment:
+      - BOT_ENV=staging
+      - LOG_LEVEL=DEBUG
+    depends_on:
+      redis:
+        condition: service_healthy
+      chroma:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+      - staging_memory:/app/memory_db
+      - staging_backups:/app/backups
+      - staging_exports:/app/exports
+    mem_limit: 512m
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  # ── Kod Sandbox ───────────────────────────────────────────────
+  code_sandbox:
+    image: python:3.11-slim
+    container_name: harun_code_sandbox_staging
+    mem_limit: 128m
+    cpu_quota: 30000
+    network_mode: none
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:size=32m,noexec
+    restart: "no"
+
+  # ── Redis (Staging) ───────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: harun_redis_staging
+    volumes:
+      - staging_redis:/data
+    command: redis-server --appendonly yes --maxmemory 128mb --maxmemory-policy allkeys-lru
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ── ChromaDB (Staging) ────────────────────────────────────────
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: harun_chroma_staging
+    volumes:
+      - staging_chroma:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+      - CHROMA_SERVER_HOST=0.0.0.0
+      - CHROMA_SERVER_HTTP_PORT=8000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  # ── Prometheus (Staging — port 9091) ──────────────────────────
+  prometheus:
+    image: prom/prometheus:v2.51.0
+    container_name: harun_prometheus_staging
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./monitoring/alerts.yml:/etc/prometheus/alerts.yml:ro
+      - staging_prometheus:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=7d'
+      - '--web.enable-lifecycle'
+    ports:
+      - "9091:9090"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  # ── Grafana (Staging — port 3001) ────────────────────────────
+  grafana:
+    image: grafana/grafana:10.4.0
+    container_name: harun_grafana_staging
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=staging2026
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_UNIFIED_ALERTING_ENABLED=true
+      - GF_SERVER_ROOT_URL=http://localhost:3001
+    volumes:
+      - staging_grafana:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  staging_redis:
+    driver: local
+  staging_chroma:
+    driver: local
+  staging_memory:
+    driver: local
+  staging_backups:
+    driver: local
+  staging_exports:
+    driver: local
+  staging_prometheus:
+    driver: local
+  staging_grafana:
+    driver: local

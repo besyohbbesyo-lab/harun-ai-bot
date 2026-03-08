@@ -1,0 +1,299 @@
+[
+ {
+  "icerik": "S: python'da liste nasıl sıralanır\nY: Python'da bir liste, `sort()` metodunu (liste üzerinde yerel olarak sıralar) veya `sorted()` fonksiyonunu kullanarak sıralanır. Örneğin:  \n- `my_list.sort()`  \n- `new_list = sorted(my_list)`  \nTers sı",
+  "tur": "sohbet",
+  "onem": 0.598,
+  "zaman": "2026-03-07T17:30:39.837816",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: bana kısa bir çalışma planı yap\nY: Elbette. Kısa bir çalışma planı şöyle olabilir:\n\n1. Belirli Bir Süre Belirleyin (örn: 2-3 hafta)\n2. Günlük Program: Her gün 1-2 saat çalışın\n3. Öncelikler: En zor konuları öne alın\n\n📎 Kaynak: `memory`",
+  "tur": "sohbet",
+  "onem": 0.588,
+  "zaman": "2026-03-07T17:32:17.833894",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: bana haftalık kpss çalışma programı yap ama matematik ağırlıklı olsun.\nY: Evet. Matematik ağırlıklı haftalık KPSS çalışma programı şöyle olabilir:\n\n- **Pazartesi:** Matematik (Temel Formüller ve Soru Çözümü)\n- **Salı:** Matematik (İstatistik ve İdeal Sayılar)\n- **Çarşamba:*",
+  "tur": "sohbet",
+  "onem": 0.583,
+  "zaman": "2026-03-07T17:38:15.690908",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: başak burçlarının özellikleri nelerlerdir?\nY: Başak burcu (23 Ağustos - 22 Eylül) insanları genellikle oldukça titizdir. 📎 Kaynak: `memory`\n\n[  !  ] Guven: %56 (Orta) | Tutarlilik: %23 | Lokal",
+  "tur": "sohbet",
+  "onem": 0.571,
+  "zaman": "2026-03-07T17:39:44.953313",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: bugün ne çalışayım?\nY: Bugün hafızanızı geliştirmek için bir çalışma planlayabilirsiniz. 📎 Kaynak: `memory`\n\n[  !  ] Guven: %65 (Orta) | Tutarlilik: %43 | Lokal",
+  "tur": "sohbet",
+  "onem": 0.568,
+  "zaman": "2026-03-07T18:08:12.735874",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: python'da dictionary nasıl kullanılır?\nY: Python'da sözlükler (dictionaries) anahtar-değer çiftleriyle çalışır ve {} işareti ile tanımlanır. Örneğin: `sozluk = {'isim': 'Ahmet', 'yas': 30}`. Anahtarlara erişmek için `sozluk['isim']` gibi yazı",
+  "tur": "sohbet",
+  "onem": 0.562,
+  "zaman": "2026-03-07T18:11:36.360789",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: python'da fonksiyon nasıl yazılır?\nY: Kısa Özet: Python'da fonksiyonlar `def` anahtar kelimesi ile tanımlanır ve parametreleri alabilir.  \n\nAdım Adım:  \n1. **Fonksiyon Tanımı**: `def` anahtar kelimesi kullanarak fonksiyon ismini yazın.  \n",
+  "tur": "sohbet",
+  "onem": 0.555,
+  "zaman": "2026-03-07T18:16:11.208817",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: python'da fonksiyon nedir? kısa özet ve sonra adım adım anlat\nY: Kısa Özet: Python'da fonksiyonlar `def` anahtar kelimesi ile tanımlanan, belirli bir görevi yerine getiren kod bloklarıdır.  \n\nAdım Adım:  \n1. **Fonksiyon Tanımı**: `def` anahtar kelimesi kullanarak f",
+  "tur": "sohbet",
+  "onem": 0.526,
+  "zaman": "2026-03-07T20:07:16.891426",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: python'da liste nasıl sıralanır?\nhaftalık kpss çalışma planı yap\nbaşak burçlarının özellikleri nelerdir?\nY: **Python'da Liste Nasıl Sıralanır?**\n\nPython'da liste sıralamak için `sort()` fonksiyonunu kullanabilirsiniz. Bu fonksiyon listenin içini değiştirir. Eğer listenin içini değiştirmek istemiyorsanız `so",
+  "tur": "sohbet",
+  "onem": 0.533,
+  "zaman": "2026-03-07T20:14:30.555255",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: python'da liste nasıl sıralanır?\nY: Python'da liste sıralamak için `sort()` fonksiyonunu kullanabilirsiniz. Bu fonksiyon listenin içini değiştirir; eğer listeyi orijinaline korumak isterseniz `sorted()` fonksiyonu kullanılabilir.  \n\n📎 K",
+  "tur": "sohbet",
+  "onem": 0.537,
+  "zaman": "2026-03-07T20:15:17.370767",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: python'da fonksiyon nedir?\nY: Python'da fonksiyonlar `def` anahtar kelimesi ile tanımlanan, belirli bir görevi yerine getiren kod bloklarıdır.\n\n[ OK ] Guven: %84 (Yuksek) | Tutarlilik: %89 | Lokal",
+  "tur": "sohbet",
+  "onem": 0.594,
+  "zaman": "2026-03-07T20:17:38.693910",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: kuantum bilgisayarlarının geleceğe etkisi nasıl olacaktır. açıklamanı istiyorum.\nY: Kısa özet: Kuantum bilgisayarların gelecekteki etkisi, karmaşık problemleri hızla çözebilme yetenekleriyle teknoloji, sağlık ve ekonomi alanlarında devrimsel değişiklikler yaratacaktır.  \n\nAdım Adım A",
+  "tur": "sohbet",
+  "onem": 0.582,
+  "zaman": "2026-03-07T20:57:51.781322",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: kuantum bilgisayarlarının geleceğe etkisi nasıl olacaktır açıklamanı istiyorum.\nY: Kısa özet: Kuantum bilgisayarların gelecekteki etkisi, karmaşık problemleri hızla çözebilme yetenekleriyle teknoloji, sağlık ve ekonomi alanlarında devrimsel değişiklikler yaratacaktır. 📎 Kaynak: `mem",
+  "tur": "sohbet",
+  "onem": 0.57,
+  "zaman": "2026-03-07T21:02:14.661271",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: python'da class ile object arasındaki farkı örnekle anlat\nY: Python'da **sınıf (class)** bir nesnenin blueprint'udur; özellikleri (attributes) ve davranışları (methods) tanımlar. **Nesne (object)** ise bu blueprint'tan oluşturulan örneklerdir ve kendi durumları",
+  "tur": "sohbet",
+  "onem": 0.565,
+  "zaman": "2026-03-07T21:05:13.817314",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: kpss için 1 haftalık matematik ağırlıklı çalışma planı hazırla\nY: KPSS için 1 haftalık matematik ağırlıklı çalışma planı:\n- Pazartesi: Sayılar ve Temel İşlemler  \n- Salı: Cebir ve Denklemler  \n- Çarşamba: Geometri ve Trigonometri  \n- Perşembe: Olasılık ve İstatistik",
+  "tur": "sohbet",
+  "onem": 0.561,
+  "zaman": "2026-03-07T21:06:50.695936",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: yapay zekada prompt injection nedir, basitçe açıkla ve korunma yollarını yaz\nY: Prompt injection, basitçe anlatırsak; kullanıcı tarafından girilen komutları manipüle ederek yapay zeka asistanının istenmeyen veya zararlı davranışlara zorlama yöntemidir.  \n\nKorunma yolları:  \n1. Gi",
+  "tur": "sohbet",
+  "onem": 0.556,
+  "zaman": "2026-03-07T21:07:58.332342",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: bir startup fikrini değerlendirirken hangi kriterlere bakılmalı\nY: Startup fikrini değerlendirmek için genellikle şu kriterlere bakılır: pazar büyüklüğü, sorunun gerçekliği ve çözümün ihtiyacı karşılaması, ekibin deneyimi, rekabet analizi ve gelir modeli. 📎 Kaynak: `",
+  "tur": "sohbet",
+  "onem": 0.556,
+  "zaman": "2026-03-07T21:09:06.545922",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: python'da class ile object arasındaki farkı örnekle anlat\nY: Kısa Özet: Python'da **sınıf** bir nesnenin blueprint'udur ve özellikleri (attributes) ve davranışları (methods) tanımlar. **Nesne** ise bu blueprint'tan oluşturulan örneklerdir.\n\nAdım Adım Anlatım:\n1",
+  "tur": "sohbet",
+  "onem": 0.554,
+  "zaman": "2026-03-07T21:13:08.064607",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: kpss için 1 haftalık matematik ağırlıklı çalışma planı hazırla\nY: KPSS için 1 haftalık matematik odaklı çalışma planı aşağıda yer alır:  \n\n### Kısa Özet  \nHer gün farklı bir konu üzerinde derinlemesine çalışarak temel ve ileri matematik alanlarını kapsayan yapılandı",
+  "tur": "sohbet",
+  "onem": 0.551,
+  "zaman": "2026-03-07T21:14:44.295999",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: yapay zekada prompt injection nedir, basitçe açıkla ve korunma yollarını yaz\nY: Kısa özet: Prompt injection, kullanıcı tarafından girilen komutları manipüle ederek yapay zeka asistanının istenmeyen veya zararlı davranışlara zorlama yöntemidir.  \n\nKorunma Yolları:  \n1. Gi\n\n[  !  ]",
+  "tur": "sohbet",
+  "onem": 0.547,
+  "zaman": "2026-03-07T21:16:49.983240",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: bir startup fikrini değerlendirirken hangi kriterlere bakılmalı\nY: Startup fikrini değerlendirmek için genellikle şu kriterlere bakılır: pazar büyüklüğü, sorunun gerçekliği ve çözümün ihtiyacı karşılaması, ekibin deneyimi, rekabet analizi ve gelir modeli.\n\n1.  **Paza",
+  "tur": "sohbet",
+  "onem": 0.546,
+  "zaman": "2026-03-07T21:18:00.225590",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: \"Python'da list comprehension nasıl kullanılır?\"\nY: Python'da list comprehension, iterable üzerinde döngü yaparak ifadeyi uygular ve yeni bir liste oluşturur. Örneğin: `[x*2 for x in range(5)]` kodu 0-4 arasındaki sayıları alır ve her birini iki ile ça",
+  "tur": "sohbet",
+  "onem": 0.548,
+  "zaman": "2026-03-07T22:15:29.118655",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Docker nedir, ne işe yarar\nY: Docker, uygulamaları bağımsız ve taşınabilir konteynerlerde çalıştırabilen bir kapsülleme platformudur. Bu sayede farklı ortamlarda sorunsuz çalışmasını sağlar. 📎 Kaynak: `memory`\n\n[  !  ] Guven: %64 ",
+  "tur": "sohbet",
+  "onem": 0.553,
+  "zaman": "2026-03-07T22:16:45.471678",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Git rebase ile merge arasındaki fark nedir?\nY: Git rebase ile merge arasındaki fark şu şekildedir:\n\n- **Rebase**: Bir branch'taki tüm commitleri başka bir branch'e eklemeden önce sıralar ve doğal tarih oluşturur.\n- **Merge**: İki branch'in geçmişl",
+  "tur": "sohbet",
+  "onem": 0.558,
+  "zaman": "2026-03-07T22:17:31.805286",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Python'da list comprehension nasıl kullanılır?\nY: Python'da list comprehension, iterable üzerinde döngü yaparak ifadeyi uygular ve yeni bir liste oluşturur.  \n\n- **Temel Yapı**: `[expresssion for item in iterable]` şeklindedir.  \n  - `expression`: He",
+  "tur": "sohbet",
+  "onem": 0.55,
+  "zaman": "2026-03-07T22:23:32.138939",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Docker nedir, ne işe yarar?\nY: Kısa: Bilgimizde Docker ile ilgili bilgiler bulunmamaktadır.  \n\nGerekiyorsa madde madde net adım verilemez, çünkü PROJE_KB’deki içeriklerde Docker ile ilgili herhangi bir bilgi yer almamaktadır. 📎 Kay",
+  "tur": "sohbet",
+  "onem": 0.547,
+  "zaman": "2026-03-07T22:24:36.534886",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Git rebase ile merge arasındaki fark nedir?\nY: Kısa özet: Git rebase ile merge arasındaki temel fark, branch'leri birleştirme yöntemlerindeki tarih sırasını ve işleyişi farklılaştırır. Rebase, commitleri sıralayarak doğal tarih oluştururken, merge",
+  "tur": "sohbet",
+  "onem": 0.541,
+  "zaman": "2026-03-07T22:25:32.794171",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Python’da for ve while döngülerini kısa özet + madde madde örneklerle açıkla.\nY: Python’da **for döngüsü** iterable veri yapıları (örn: liste, tuple) üzerinde gezinmek için; **while döngüsü** belirtilen koşulun doğru olduğu sürece devam etmek için kullanılır.\n\n---\n\n### For Döngüsü",
+  "tur": "sohbet",
+  "onem": 0.558,
+  "zaman": "2026-03-08T00:40:27.243084",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Python’da for ve while döngülerini kısa özet + madde madde örneklerle açıkla.\nY: Python’da **for döngüsü** iterable veri yapıları (örn: liste, tuple) üzerinde gezinmek için; **while döngüsü** belirtilen koşulun doğru olduğu sürece devam etmek için kullanılır.\n\n---\n\n### For Döngüsü",
+  "tur": "sohbet",
+  "onem": 0.558,
+  "zaman": "2026-03-08T00:44:27.706707",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Python’da for ve while döngülerini kısa özet + madde madde örneklerle açıkla. [B-test-1]\nY: Python’da **for döngüsü** iterable veri yapıları (örn: liste, tuple) üzerinde gezinmek için; **while döngüsü** belirtilen koşulun doğru olduğu sürece devam etmek için kullanılır.\n\n---\n\n### For Döngüsü",
+  "tur": "sohbet",
+  "onem": 0.566,
+  "zaman": "2026-03-08T00:48:12.155856",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Python'da for ve while döngülerini karşılaştır. Aralarındaki 5 farkı madde madde ver; her biri için birer kod örneği, 2 yaygın hata, 2 gerçek kullanım senaryosu ve en sonda 4 maddelik kısa özet ekle. \nY: 2.2.1 For Döngüsü For döngüsü, bir listeyi veya bir dizi veri kümesinde her bir elemana erişmek için kullanılır. for değişken in liste: yapılmak istenilen işlemler Örnek : bir listedeki her eleman içi",
+  "tur": "sohbet",
+  "onem": 0.535,
+  "zaman": "2026-03-08T00:52:33.536221",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Python'da for ve while döngülerini karşılaştır. Aralarındaki 5 farkı madde madde ver; her biri için birer kod örneği, 2 yaygın hata, 2 gerçek kullanım senaryosu ve en sonda 4 maddelik kısa özet ekle. \nY: Python'da for ve while döngülerini karşılaştırarak, aralarındaki 5 farkı madde madde vererek, her biri için birer kod örneği, 2 yaygın hata, 2 gerçek kullanım senaryosu ve en sonda 4 maddelik kısa öze",
+  "tur": "sohbet",
+  "onem": 0.51,
+  "zaman": "2026-03-08T01:18:26.393110",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ },
+ {
+  "icerik": "S: Python'da for ve while döngülerini karşılaştır. Aralarındaki 5 farkı madde madde ver; her biri için birer kod örneği, 2 yaygın hata, 2 gerçek kullanım senaryosu ve en sonda 4 maddelik kısa özet ekle. \nY: Python'da for ve while döngülerini karşılaştırarak, aralarındaki 5 farkı madde madde vererek, her biri için birer kod örneği, 2 yaygın hata, 2 gerçek kullanım senaryosu ve en sonda 4 maddelik kısa öze",
+  "tur": "sohbet",
+  "onem": 0.493,
+  "zaman": "2026-03-08T01:32:08.608352",
+  "user_id": 6481156818,
+  "erisim": 0,
+  "meta": {}
+ }
+]

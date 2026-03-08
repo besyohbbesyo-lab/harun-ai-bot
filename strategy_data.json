@@ -1,0 +1,76 @@
+{
+  "907bd13a39e9": {
+    "gorev_turu": "sohbet",
+    "toplam": 4,
+    "basarili": 4,
+    "toplam_sure": 47.48688268661499,
+    "performans_skoru": 0.8423378781036452,
+    "son_guncelleme": "2026-02-28 17:11:08.195491"
+  },
+  "a7383fe9dc2f": {
+    "gorev_turu": "sohbet",
+    "toplam": 99,
+    "basarili": 98,
+    "toplam_sure": 1410.6173782348633,
+    "performans_skoru": 0.6947312681106309,
+    "son_guncelleme": "2026-03-07 20:57:50.559321",
+    "aktif": false
+  },
+  "03a4253ee5ae": {
+    "gorev_turu": "genel",
+    "toplam": 52,
+    "basarili": 52,
+    "toplam_sure": 921.6987237930298,
+    "performans_skoru": 0.5641756753877936,
+    "son_guncelleme": "2026-03-01 08:10:25.373102"
+  },
+  "e3ac52514fac": {
+    "gorev_turu": "genel",
+    "toplam": 19,
+    "basarili": 19,
+    "toplam_sure": 205.93199276924133,
+    "performans_skoru": 0.922634688495954,
+    "son_guncelleme": "2026-03-01 07:44:18.045501"
+  },
+  "0f5b4eea20b4": {
+    "gorev_turu": "sohbet",
+    "toplam": 119,
+    "basarili": 115,
+    "toplam_sure": 5586.0638422966,
+    "performans_skoru": 0.20586946953459812,
+    "son_guncelleme": "2026-03-08 01:32:06.954747",
+    "aktif": false
+  },
+  "6e2514dbd653": {
+    "gorev_turu": "arastirma",
+    "toplam": 1,
+    "basarili": 1,
+    "toplam_sure": 63.24210715293884,
+    "performans_skoru": 0.1581224986039274,
+    "son_guncelleme": "2026-02-20 11:44:26.020654"
+  },
+  "71732bce2d1e": {
+    "gorev_turu": "kod",
+    "toplam": 16,
+    "basarili": 16,
+    "toplam_sure": 25.232455730438232,
+    "performans_skoru": 6.3410395606873085,
+    "son_guncelleme": "2026-02-25 23:22:50.664667"
+  },
+  "c0d5df363787": {
+    "gorev_turu": "genel",
+    "toplam": 3,
+    "basarili": 3,
+    "toplam_sure": 21.45985984802246,
+    "performans_skoru": 1.3979588036668618,
+    "son_guncelleme": "2026-03-01 07:42:55.174642"
+  },
+  "ed5b84876ec3": {
+    "gorev_turu": "sohbet",
+    "toplam": 1,
+    "basarili": 1,
+    "toplam_sure": 84.94611883163452,
+    "performans_skoru": 0.11772168213853616,
+    "son_guncelleme": "2026-03-01 20:44:00.565482"
+  }
+}

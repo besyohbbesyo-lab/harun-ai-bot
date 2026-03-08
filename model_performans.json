@@ -1,0 +1,12 @@
+{
+  "Groq_sohbet": {
+    "model": "Groq",
+    "gorev_turu": "sohbet",
+    "toplam": 4,
+    "basarili": 4,
+    "toplam_sure": 4.461017847061157,
+    "ort_sure": 1.12,
+    "basari_orani": 1.0,
+    "son_guncelleme": "2026-02-22 20:13:37.739507"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "sohbet_v1": {
+    "tur": "sohbet",
+    "icerik": "Asagidaki soruyu Turkce, kisa ve net yanıtla:\n{soru}",
+    "versiyon": "v1",
+    "basarili": 180,
+    "basarisiz": 2,
+    "toplam": 182,
+    "aktif": true,
+    "sampiyun": true,
+    "olusturulma": "2026-02-20 04:24:04.501274"
+  },
+  "sohbet_v2": {
+    "tur": "sohbet",
+    "icerik": "Sen yardimci bir AI asistansin. Asagidaki soruyu adim adim dusun ve Turkce yanıtla:\n{soru}",
+    "versiyon": "v2",
+    "basarili": 34,
+    "basarisiz": 3,
+    "toplam": 37,
+    "aktif": true,
+    "sampiyun": false,
+    "olusturulma": "2026-02-20 04:24:04.501274"
+  },
+  "kod_v1": {
+    "tur": "kod",
+    "icerik": "Asagidaki aciklamaya gore Python kodu yaz:\n{aciklama}\n\nSadece calisacak kodu yaz.",
+    "versiyon": "v1",
+    "basarili": 14,
+    "basarisiz": 0,
+    "toplam": 14,
+    "aktif": true,
+    "sampiyun": true,
+    "olusturulma": "2026-02-20 04:24:04.501274"
+  },
+  "kod_v2": {
+    "tur": "kod",
+    "icerik": "Python uzmanı olarak asagidaki gorevi coz:\n{aciklama}\n\nOnce problemi analiz et, sonra temiz ve yorumlu kod yaz.",
+    "versiyon": "v2",
+    "basarili": 2,
+    "basarisiz": 0,
+    "toplam": 2,
+    "aktif": true,
+    "sampiyun": false,
+    "olusturulma": "2026-02-20 04:24:04.501274"
+  },
+  "arastirma_v1": {
+    "tur": "arastirma",
+    "icerik": "Asagidaki konuyu arastir ve ozetle:\n{konu}\n\nBilgiler: {bilgiler}",
+    "versiyon": "v1",
+    "basarili": 0,
+    "basarisiz": 0,
+    "toplam": 0,
+    "aktif": true,
+    "sampiyun": false,
+    "olusturulma": "2026-02-20 04:24:04.501274"
+  },
+  "arastirma_v2": {
+    "tur": "arastirma",
+    "icerik": "'{konu}' hakkinda kapsamli bir analiz yap.\nKaynaklar: {bilgiler}\n\nYapi: 1) Ozet 2) Ana Noktalar 3) Sonuc",
+    "versiyon": "v2",
+    "basarili": 1,
+    "basarisiz": 0,
+    "toplam": 1,
+    "aktif": true,
+    "sampiyun": false,
+    "olusturulma": "2026-02-20 04:24:04.502273"
+  },
+  "genel_v1": {
+    "tur": "genel",
+    "icerik": "{prompt}",
+    "versiyon": "v1",
+    "basarili": 49,
+    "basarisiz": 0,
+    "toplam": 49,
+    "aktif": true,
+    "sampiyun": true,
+    "olusturulma": "2026-02-20 04:24:04.502273"
+  },
+  "genel_v2": {
+    "tur": "genel",
+    "icerik": "Asagidaki gorevi dikkatlice ve adim adim tamamla:\n{prompt}",
+    "versiyon": "v2",
+    "basarili": 25,
+    "basarisiz": 0,
+    "toplam": 25,
+    "aktif": true,
+    "sampiyun": false,
+    "olusturulma": "2026-02-20 04:24:04.502273"
+  }
+}

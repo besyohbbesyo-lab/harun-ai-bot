@@ -1,0 +1,31 @@
+# monitoring/prometheus.yml
+# Harun AI — Prometheus Konfigurasyonu
+# Sprint 5 — S5-1
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    project: 'harun_ai'
+
+# Alert kuralları
+rule_files:
+  - "alerts.yml"
+
+scrape_configs:
+  # Bot metrikleri (port 8001)
+  - job_name: 'harun_bot'
+    static_configs:
+      - targets: ['host.docker.internal:8001']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # Prometheus kendisi
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Redis metrikleri (opsiyonel)
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']

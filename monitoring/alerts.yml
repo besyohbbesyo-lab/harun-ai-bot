@@ -1,0 +1,71 @@
+# monitoring/alerts.yml
+# Harun AI — Prometheus Alert Kuralları
+# Sprint 5 — S5-2
+
+groups:
+  - name: harun_ai_alerts
+    interval: 30s
+    rules:
+
+      # ── KRİTİK ALERTLER ─────────────────────────────────────────────────
+
+      - alert: BotYanitvermiyorr
+        expr: up{job="harun_bot"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Bot metrics endpoint erişilemiyor"
+          description: "harun_bot 1 dakikadır cevap vermiyor. Bot çökmüş olabilir."
+
+      - alert: YuksekHataOrani
+        expr: |
+          rate(harun_errors_total[5m]) /
+          (rate(harun_messages_total[5m]) + 0.001) > 0.10
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Hata oranı %10 üzerinde"
+          description: "Son 5 dakikada hata oranı {{ $value | humanizePercentage }}. Kontrol et!"
+
+      - alert: TumAPIKeylerCooldown
+        expr: harun_active_users == 0 and rate(harun_messages_total[5m]) > 0
+        for: 3m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Tüm API keyleri cooldown'da olabilir"
+          description: "Mesaj geliyor ama aktif kullanıcı 0. API rotator sorunu?"
+
+      # ── UYARI ALERTLER ──────────────────────────────────────────────────
+
+      - alert: YavasYanitSuresi
+        expr: |
+          histogram_quantile(0.95,
+            rate(harun_response_latency_seconds_bucket[5m])
+          ) > 5
+        for: 3m
+        labels:
+          severity: warning
+        annotations:
+          summary: "P95 yanıt süresi 5sn üzerinde"
+          description: "P95 yanıt süresi {{ $value }}sn. Groq API yavaş olabilir."
+
+      - alert: YuksekTokenKullanimi
+        expr: harun_daily_tokens_used > 80000
+        for: 0m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Günlük token kullanımı %80 üzerinde"
+          description: "{{ $value }} token kullanıldı. Limit aşımı yaklaşıyor."
+
+      - alert: DusukMesajHizi
+        expr: rate(harun_messages_total[30m]) == 0
+        for: 30m
+        labels:
+          severity: info
+        annotations:
+          summary: "30 dakikadır mesaj yok"
+          description: "Bot aktif ama hiç mesaj gelmiyor. Normal mi?"

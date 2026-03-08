@@ -1,0 +1,51 @@
+# .pre-commit-config.yaml — S6-8: Ruff + mypy + Pre-commit
+# Kurulum: pre-commit install
+# Manuel calistirma: pre-commit run --all-files
+
+repos:
+  # ── Ruff: Linting + Formatting ───────────────────────────────
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4
+    hooks:
+      - id: ruff
+        name: Ruff Linter
+        args: [--fix, --exit-non-zero-on-fix]
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: Ruff Formatter
+        types_or: [python, pyi]
+
+  # ── Temel kontroller ─────────────────────────────────────────
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        name: Trailing whitespace temizle
+      - id: end-of-file-fixer
+        name: Dosya sonu newline
+      - id: check-yaml
+        name: YAML syntax kontrolu
+      - id: check-json
+        name: JSON syntax kontrolu
+      - id: check-merge-conflict
+        name: Merge conflict isaretleri
+      - id: check-added-large-files
+        name: Buyuk dosya kontrolu
+        args: [--maxkb=1000]
+      - id: debug-statements
+        name: Debug statement kontrolu
+
+  # ── mypy: Type checking ──────────────────────────────────────
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0
+    hooks:
+      - id: mypy
+        name: mypy Type Checker
+        args:
+          - --ignore-missing-imports
+          - --no-strict-optional
+          - --warn-unused-ignores
+        additional_dependencies:
+          - types-requests
+          - types-python-dateutil
+        files: ^core/

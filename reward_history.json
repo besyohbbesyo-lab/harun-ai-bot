@@ -1,0 +1,3002 @@
+[
+  {
+    "zaman": "2026-02-25 23:19:40.491013",
+    "basari": true,
+    "raw": 0.7749,
+    "normalized": 0.9684,
+    "smoothed": 0.9706,
+    "sure": 1.8407366275787354,
+    "token_tahmini": 242,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.18,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-25 23:19:58.720743",
+    "basari": true,
+    "raw": 0.7802,
+    "normalized": 0.9768,
+    "smoothed": 0.9725,
+    "sure": 0.8649237155914307,
+    "token_tahmini": 272,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.185,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-25 23:20:18.836872",
+    "basari": true,
+    "raw": 0.78,
+    "normalized": 0.9764,
+    "smoothed": 0.9737,
+    "sure": 0.9003479480743408,
+    "token_tahmini": 272,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-25 23:22:50.664667",
+    "basari": true,
+    "raw": 0.7765,
+    "normalized": 0.9711,
+    "smoothed": 0.9729,
+    "sure": 1.3831932544708252,
+    "token_tahmini": 274,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.182,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-26 19:59:46.997080",
+    "basari": true,
+    "raw": 0.653,
+    "normalized": 0.7773,
+    "smoothed": 0.9142,
+    "sure": 43.95384383201599,
+    "token_tahmini": 325,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.097,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.044
+    }
+  },
+  {
+    "zaman": "2026-02-26 20:01:31.647231",
+    "basari": true,
+    "raw": 0.6484,
+    "normalized": 0.7702,
+    "smoothed": 0.871,
+    "sure": 64.03057432174683,
+    "token_tahmini": 539,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-02-26 20:04:14.820898",
+    "basari": true,
+    "raw": 0.6596,
+    "normalized": 0.7878,
+    "smoothed": 0.846,
+    "sure": 120.2057580947876,
+    "token_tahmini": 17,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-26 22:59:17.310861",
+    "basari": false,
+    "raw": 0.1593,
+    "normalized": 0.0035,
+    "smoothed": 0.5932,
+    "sure": 120.52894353866577,
+    "token_tahmini": 31,
+    "formula": {
+      "basari_katkisi": 0.0,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-26 23:01:25.842947",
+    "basari": false,
+    "raw": 0.1593,
+    "normalized": 0.0035,
+    "smoothed": 0.4163,
+    "sure": 120.5153558254242,
+    "token_tahmini": 31,
+    "formula": {
+      "basari_katkisi": 0.0,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-26 23:03:06.043560",
+    "basari": true,
+    "raw": 0.6595,
+    "normalized": 0.7876,
+    "smoothed": 0.5277,
+    "sure": 97.66039633750916,
+    "token_tahmini": 22,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-26 23:04:14.953832",
+    "basari": true,
+    "raw": 0.6596,
+    "normalized": 0.7878,
+    "smoothed": 0.6057,
+    "sure": 68.23821592330933,
+    "token_tahmini": 16,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-26 23:05:05.829951",
+    "basari": true,
+    "raw": 0.6596,
+    "normalized": 0.7877,
+    "smoothed": 0.6603,
+    "sure": 49.56114912033081,
+    "token_tahmini": 19,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-26 23:38:15.784395",
+    "basari": true,
+    "raw": 0.6905,
+    "normalized": 0.8362,
+    "smoothed": 0.7131,
+    "sure": 16.894927978515625,
+    "token_tahmini": 545,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.12,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.029
+    }
+  },
+  {
+    "zaman": "2026-02-26 23:39:21.164546",
+    "basari": true,
+    "raw": 0.6533,
+    "normalized": 0.7771,
+    "smoothed": 0.7323,
+    "sure": 48.48306393623352,
+    "token_tahmini": 308,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.097,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.044
+    }
+  },
+  {
+    "zaman": "2026-02-26 23:40:51.984505",
+    "basari": true,
+    "raw": 0.6595,
+    "normalized": 0.7868,
+    "smoothed": 0.7486,
+    "sure": 52.21990346908569,
+    "token_tahmini": 25,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-26 23:42:11.314227",
+    "basari": true,
+    "raw": 0.6595,
+    "normalized": 0.7868,
+    "smoothed": 0.7601,
+    "sure": 58.457292318344116,
+    "token_tahmini": 24,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-26 23:44:07.215302",
+    "basari": true,
+    "raw": 0.6595,
+    "normalized": 0.7869,
+    "smoothed": 0.7681,
+    "sure": 84.70163464546204,
+    "token_tahmini": 22,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-27 20:59:56.025098",
+    "basari": true,
+    "raw": 0.7908,
+    "normalized": 0.9934,
+    "smoothed": 0.8357,
+    "sure": 1.0466740131378174,
+    "token_tahmini": 21,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.192,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.002
+    }
+  },
+  {
+    "zaman": "2026-02-27 21:00:17.647541",
+    "basari": true,
+    "raw": 0.7779,
+    "normalized": 0.9732,
+    "smoothed": 0.8769,
+    "sure": 1.0926001071929932,
+    "token_tahmini": 287,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-27 21:01:37.019379",
+    "basari": true,
+    "raw": 0.7642,
+    "normalized": 0.9515,
+    "smoothed": 0.8993,
+    "sure": 1.664602518081665,
+    "token_tahmini": 517,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.173,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.008
+    }
+  },
+  {
+    "zaman": "2026-02-27 21:02:22.053644",
+    "basari": true,
+    "raw": 0.7724,
+    "normalized": 0.9645,
+    "smoothed": 0.9189,
+    "sure": 1.4956490993499756,
+    "token_tahmini": 349,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.179,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.006
+    }
+  },
+  {
+    "zaman": "2026-02-27 21:02:46.998667",
+    "basari": true,
+    "raw": 0.7909,
+    "normalized": 0.9936,
+    "smoothed": 0.9413,
+    "sure": 1.0357980728149414,
+    "token_tahmini": 21,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.193,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.002
+    }
+  },
+  {
+    "zaman": "2026-02-27 21:04:17.664359",
+    "basari": true,
+    "raw": 0.6596,
+    "normalized": 0.787,
+    "smoothed": 0.895,
+    "sure": 67.95916604995728,
+    "token_tahmini": 19,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-27 21:04:45.521521",
+    "basari": true,
+    "raw": 0.7931,
+    "normalized": 0.997,
+    "smoothed": 0.9256,
+    "sure": 0.7287235260009766,
+    "token_tahmini": 24,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.194,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-27 21:05:06.309422",
+    "basari": true,
+    "raw": 0.7963,
+    "normalized": 1.0021,
+    "smoothed": 0.9486,
+    "sure": 0.3396008014678955,
+    "token_tahmini": 19,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.197,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-27 21:29:17.773336",
+    "basari": true,
+    "raw": 0.6597,
+    "normalized": 0.7856,
+    "smoothed": 0.8997,
+    "sure": 102.31071901321411,
+    "token_tahmini": 12,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-27 22:01:49.305920",
+    "basari": true,
+    "raw": 0.7727,
+    "normalized": 0.963,
+    "smoothed": 0.9187,
+    "sure": 1.8421642780303955,
+    "token_tahmini": 290,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.179,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.006
+    }
+  },
+  {
+    "zaman": "2026-02-27 22:02:16.863872",
+    "basari": true,
+    "raw": 0.7766,
+    "normalized": 0.969,
+    "smoothed": 0.9338,
+    "sure": 1.1962461471557617,
+    "token_tahmini": 302,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.182,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-27 22:02:26.816500",
+    "basari": true,
+    "raw": 0.7812,
+    "normalized": 0.9762,
+    "smoothed": 0.9465,
+    "sure": 0.849571943283081,
+    "token_tahmini": 254,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.185,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-27 22:02:48.726711",
+    "basari": true,
+    "raw": 0.7247,
+    "normalized": 0.8876,
+    "smoothed": 0.9288,
+    "sure": 7.021291732788086,
+    "token_tahmini": 794,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.144,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.019
+    }
+  },
+  {
+    "zaman": "2026-02-27 22:04:54.456524",
+    "basari": true,
+    "raw": 0.6595,
+    "normalized": 0.7853,
+    "smoothed": 0.8858,
+    "sure": 105.4147400856018,
+    "token_tahmini": 21,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:00:04.302817",
+    "basari": true,
+    "raw": 0.7745,
+    "normalized": 0.9658,
+    "smoothed": 0.9098,
+    "sure": 1.7039129734039307,
+    "token_tahmini": 271,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.18,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.006
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:00:42.062846",
+    "basari": true,
+    "raw": 0.7793,
+    "normalized": 0.9733,
+    "smoothed": 0.9288,
+    "sure": 0.8292789459228516,
+    "token_tahmini": 298,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:00:58.505881",
+    "basari": true,
+    "raw": 0.7796,
+    "normalized": 0.9738,
+    "smoothed": 0.9423,
+    "sure": 1.023308277130127,
+    "token_tahmini": 261,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:01:12.688209",
+    "basari": true,
+    "raw": 0.7769,
+    "normalized": 0.9696,
+    "smoothed": 0.9505,
+    "sure": 1.3894054889678955,
+    "token_tahmini": 264,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.182,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:01:28.315746",
+    "basari": true,
+    "raw": 0.7971,
+    "normalized": 1.0012,
+    "smoothed": 0.9657,
+    "sure": 0.22725915908813477,
+    "token_tahmini": 22,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.198,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:01:41.252954",
+    "basari": true,
+    "raw": 0.7969,
+    "normalized": 0.9997,
+    "smoothed": 0.9759,
+    "sure": 0.2599797248840332,
+    "token_tahmini": 20,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.197,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:01:54.824772",
+    "basari": true,
+    "raw": 0.7934,
+    "normalized": 0.9943,
+    "smoothed": 0.9814,
+    "sure": 0.6299223899841309,
+    "token_tahmini": 32,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.195,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:02:07.352810",
+    "basari": true,
+    "raw": 0.7944,
+    "normalized": 0.9958,
+    "smoothed": 0.9857,
+    "sure": 0.5704238414764404,
+    "token_tahmini": 21,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.195,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:02:22.022952",
+    "basari": true,
+    "raw": 0.7932,
+    "normalized": 0.9939,
+    "smoothed": 0.9882,
+    "sure": 0.730135440826416,
+    "token_tahmini": 21,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.194,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:49:08.794365",
+    "basari": true,
+    "raw": 0.7782,
+    "normalized": 0.9704,
+    "smoothed": 0.9829,
+    "sure": 1.2444820404052734,
+    "token_tahmini": 258,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:49:54.149330",
+    "basari": true,
+    "raw": 0.7792,
+    "normalized": 0.972,
+    "smoothed": 0.9796,
+    "sure": 1.073315143585205,
+    "token_tahmini": 262,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:50:41.762098",
+    "basari": true,
+    "raw": 0.7332,
+    "normalized": 0.8998,
+    "smoothed": 0.9557,
+    "sure": 5.228727102279663,
+    "token_tahmini": 804,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.15,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.017
+    }
+  },
+  {
+    "zaman": "2026-02-27 23:51:57.964342",
+    "basari": true,
+    "raw": 0.6513,
+    "normalized": 0.7714,
+    "smoothed": 0.9004,
+    "sure": 27.007882833480835,
+    "token_tahmini": 809,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.097,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-02-28 02:33:48.455169",
+    "basari": true,
+    "raw": 0.78,
+    "normalized": 0.9731,
+    "smoothed": 0.9222,
+    "sure": 1.0255804061889648,
+    "token_tahmini": 253,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-28 03:28:26.194162",
+    "basari": true,
+    "raw": 0.7779,
+    "normalized": 0.9698,
+    "smoothed": 0.9365,
+    "sure": 1.3272147178649902,
+    "token_tahmini": 253,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 03:28:50.225283",
+    "basari": true,
+    "raw": 0.7798,
+    "normalized": 0.9728,
+    "smoothed": 0.9474,
+    "sure": 1.09873628616333,
+    "token_tahmini": 246,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-28 04:56:12.023325",
+    "basari": true,
+    "raw": 0.6597,
+    "normalized": 0.7846,
+    "smoothed": 0.8985,
+    "sure": 88.52149844169617,
+    "token_tahmini": 14,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-28 04:57:29.913055",
+    "basari": true,
+    "raw": 0.6595,
+    "normalized": 0.7842,
+    "smoothed": 0.8642,
+    "sure": 76.52631163597107,
+    "token_tahmini": 24,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.1,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-02-28 05:23:20.487681",
+    "basari": true,
+    "raw": 0.7963,
+    "normalized": 0.9987,
+    "smoothed": 0.9045,
+    "sure": 0.32417726516723633,
+    "token_tahmini": 23,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.197,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-28 05:24:06.573855",
+    "basari": true,
+    "raw": 0.7808,
+    "normalized": 0.9745,
+    "smoothed": 0.9255,
+    "sure": 0.9105417728424072,
+    "token_tahmini": 252,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.185,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-28 05:28:37.315471",
+    "basari": true,
+    "raw": 0.7802,
+    "normalized": 0.9736,
+    "smoothed": 0.9399,
+    "sure": 0.8755316734313965,
+    "token_tahmini": 270,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.185,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-28 06:01:46.016361",
+    "basari": true,
+    "raw": 0.7785,
+    "normalized": 0.9709,
+    "smoothed": 0.9492,
+    "sure": 1.2327327728271484,
+    "token_tahmini": 253,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 06:01:48.729397",
+    "basari": true,
+    "raw": 0.7781,
+    "normalized": 0.9703,
+    "smoothed": 0.9555,
+    "sure": 1.2886857986450195,
+    "token_tahmini": 253,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 06:01:51.308128",
+    "basari": true,
+    "raw": 0.7777,
+    "normalized": 0.9695,
+    "smoothed": 0.9597,
+    "sure": 1.2265565395355225,
+    "token_tahmini": 273,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 06:01:54.363060",
+    "basari": true,
+    "raw": 0.7778,
+    "normalized": 0.9697,
+    "smoothed": 0.9627,
+    "sure": 1.1913795471191406,
+    "token_tahmini": 276,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 06:01:58.529239",
+    "basari": true,
+    "raw": 0.7939,
+    "normalized": 0.995,
+    "smoothed": 0.9724,
+    "sure": 0.6129732131958008,
+    "token_tahmini": 25,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.195,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-28 16:54:17.622907",
+    "basari": true,
+    "raw": 0.7763,
+    "normalized": 0.9673,
+    "smoothed": 0.9709,
+    "sure": 1.5820491313934326,
+    "token_tahmini": 250,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.181,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 16:54:30.742709",
+    "basari": true,
+    "raw": 0.7795,
+    "normalized": 0.9724,
+    "smoothed": 0.9713,
+    "sure": 1.0230119228363037,
+    "token_tahmini": 264,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 16:54:45.019515",
+    "basari": true,
+    "raw": 0.7801,
+    "normalized": 0.8835,
+    "smoothed": 0.9449,
+    "sure": 1.005140781402588,
+    "token_tahmini": 253,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-28 16:55:27.552691",
+    "basari": true,
+    "raw": 0.7793,
+    "normalized": 0.8779,
+    "smoothed": 0.9248,
+    "sure": 1.1410062313079834,
+    "token_tahmini": 250,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 16:55:39.653838",
+    "basari": true,
+    "raw": 0.7953,
+    "normalized": 0.9878,
+    "smoothed": 0.9437,
+    "sure": 0.5167577266693115,
+    "token_tahmini": 12,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.196,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-28 16:55:53.405872",
+    "basari": true,
+    "raw": 0.7956,
+    "normalized": 0.9895,
+    "smoothed": 0.9574,
+    "sure": 0.47771120071411133,
+    "token_tahmini": 13,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.196,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-28 16:56:51.173936",
+    "basari": true,
+    "raw": 0.7954,
+    "normalized": 0.9885,
+    "smoothed": 0.9667,
+    "sure": 0.5035843849182129,
+    "token_tahmini": 12,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.196,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-28 16:57:01.445654",
+    "basari": true,
+    "raw": 0.7954,
+    "normalized": 0.9886,
+    "smoothed": 0.9733,
+    "sure": 0.500617265701294,
+    "token_tahmini": 12,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.196,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-28 16:57:12.388315",
+    "basari": true,
+    "raw": 0.796,
+    "normalized": 0.9921,
+    "smoothed": 0.979,
+    "sure": 0.4282417297363281,
+    "token_tahmini": 13,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.197,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.001
+    }
+  },
+  {
+    "zaman": "2026-02-28 17:11:08.192499",
+    "basari": true,
+    "raw": 0.7781,
+    "normalized": 0.8698,
+    "smoothed": 0.9462,
+    "sure": 1.3440639972686768,
+    "token_tahmini": 245,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 17:11:20.289374",
+    "basari": true,
+    "raw": 0.7793,
+    "normalized": 0.8781,
+    "smoothed": 0.9258,
+    "sure": 1.1900005340576172,
+    "token_tahmini": 242,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-28 17:11:35.394459",
+    "basari": true,
+    "raw": 0.7796,
+    "normalized": 0.8797,
+    "smoothed": 0.912,
+    "sure": 1.1221823692321777,
+    "token_tahmini": 247,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.004
+    }
+  },
+  {
+    "zaman": "2026-02-28 17:13:54.945399",
+    "basari": true,
+    "raw": 0.7773,
+    "normalized": 0.8644,
+    "smoothed": 0.8977,
+    "sure": 1.3134005069732666,
+    "token_tahmini": 267,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.182,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 18:31:29.831596",
+    "basari": true,
+    "raw": 0.778,
+    "normalized": 0.869,
+    "smoothed": 0.8891,
+    "sure": 1.3615376949310303,
+    "token_tahmini": 245,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-02-28 18:32:03.890754",
+    "basari": true,
+    "raw": 0.7765,
+    "normalized": 0.8586,
+    "smoothed": 0.8799,
+    "sure": 1.141441822052002,
+    "token_tahmini": 312,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.182,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-03-01 01:54:33.988041",
+    "basari": true,
+    "raw": 0.7215,
+    "normalized": 0.4816,
+    "smoothed": 0.7604,
+    "sure": 5.7299511432647705,
+    "token_tahmini": 1081,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.142,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.021
+    }
+  },
+  {
+    "zaman": "2026-03-01 02:14:52.511903",
+    "basari": true,
+    "raw": 0.7076,
+    "normalized": 0.3862,
+    "smoothed": 0.6482,
+    "sure": 8.770888805389404,
+    "token_tahmini": 1091,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.132,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.025
+    }
+  },
+  {
+    "zaman": "2026-03-01 02:17:09.021286",
+    "basari": true,
+    "raw": 0.6812,
+    "normalized": 0.205,
+    "smoothed": 0.5152,
+    "sure": 16.072328329086304,
+    "token_tahmini": 1024,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.115,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.034
+    }
+  },
+  {
+    "zaman": "2026-03-01 02:34:42.725179",
+    "basari": true,
+    "raw": 0.7749,
+    "normalized": 0.8478,
+    "smoothed": 0.615,
+    "sure": 1.5827667713165283,
+    "token_tahmini": 280,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.18,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-03-01 02:35:49.874132",
+    "basari": true,
+    "raw": 0.7793,
+    "normalized": 0.8782,
+    "smoothed": 0.694,
+    "sure": 1.0820565223693848,
+    "token_tahmini": 258,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.184,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-03-01 03:00:08.815975",
+    "basari": true,
+    "raw": 0.7386,
+    "normalized": 0.5988,
+    "smoothed": 0.6654,
+    "sure": 4.99109673500061,
+    "token_tahmini": 684,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.153,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.015
+    }
+  },
+  {
+    "zaman": "2026-03-01 03:05:24.499112",
+    "basari": true,
+    "raw": 0.741,
+    "normalized": 0.6151,
+    "smoothed": 0.6503,
+    "sure": 4.975395917892456,
+    "token_tahmini": 620,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.155,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.014
+    }
+  },
+  {
+    "zaman": "2026-03-01 03:41:09.926509",
+    "basari": true,
+    "raw": 0.7756,
+    "normalized": 0.8525,
+    "smoothed": 0.711,
+    "sure": 1.5929224491119385,
+    "token_tahmini": 263,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.181,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-03-01 04:21:07.050029",
+    "basari": true,
+    "raw": 0.7785,
+    "normalized": 0.8726,
+    "smoothed": 0.7595,
+    "sure": 1.1659722328186035,
+    "token_tahmini": 263,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-03-01 04:30:54.720207",
+    "basari": true,
+    "raw": 0.7758,
+    "normalized": 0.8541,
+    "smoothed": 0.7879,
+    "sure": 1.3883247375488281,
+    "token_tahmini": 289,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.181,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-03-01 04:32:56.702078",
+    "basari": true,
+    "raw": 0.7783,
+    "normalized": 0.8709,
+    "smoothed": 0.8128,
+    "sure": 1.1496477127075195,
+    "token_tahmini": 271,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-03-01 04:34:18.486660",
+    "basari": true,
+    "raw": 0.7784,
+    "normalized": 0.8721,
+    "smoothed": 0.8306,
+    "sure": 1.0727980136871338,
+    "token_tahmini": 279,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.183,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.005
+    }
+  },
+  {
+    "zaman": "2026-03-01 06:53:04.400297",
+    "basari": true,
+    "raw": 0.6249,
+    "normalized": -0.1814,
+    "smoothed": 0.527,
+    "sure": 71.05558705329895,
+    "token_tahmini": 1711,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.085,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.061
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:01:00.197456",
+    "basari": true,
+    "raw": 0.7008,
+    "normalized": 0.4406,
+    "smoothed": 0.5011,
+    "sure": 7.167795658111572,
+    "token_tahmini": 1557,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.129,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.028
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:01:09.659819",
+    "basari": true,
+    "raw": 0.6797,
+    "normalized": 0.3187,
+    "smoothed": 0.4464,
+    "sure": 9.176604509353638,
+    "token_tahmini": 2050,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.117,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.037
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:01:21.086753",
+    "basari": true,
+    "raw": 0.6734,
+    "normalized": 0.283,
+    "smoothed": 0.3974,
+    "sure": 10.470800399780273,
+    "token_tahmini": 2120,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.113,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.039
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:01:31.870985",
+    "basari": true,
+    "raw": 0.6771,
+    "normalized": 0.3044,
+    "smoothed": 0.3695,
+    "sure": 9.498108148574829,
+    "token_tahmini": 2109,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.115,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.038
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:01:49.960149",
+    "basari": true,
+    "raw": 0.6563,
+    "normalized": 0.1833,
+    "smoothed": 0.3137,
+    "sure": 15.66539192199707,
+    "token_tahmini": 2125,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.103,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:02:27.058620",
+    "basari": true,
+    "raw": 0.6394,
+    "normalized": 0.0845,
+    "smoothed": 0.2449,
+    "sure": 18.584134101867676,
+    "token_tahmini": 2510,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.094,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.055
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:02:56.798660",
+    "basari": true,
+    "raw": 0.6618,
+    "normalized": 0.2153,
+    "smoothed": 0.236,
+    "sure": 14.499537467956543,
+    "token_tahmini": 2046,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.106,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.044
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:03:26.377052",
+    "basari": true,
+    "raw": 0.6331,
+    "normalized": 0.0476,
+    "smoothed": 0.1795,
+    "sure": 23.758904457092285,
+    "token_tahmini": 2124,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.09,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.057
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:03:57.310924",
+    "basari": true,
+    "raw": 0.6611,
+    "normalized": 0.2111,
+    "smoothed": 0.189,
+    "sure": 13.795945644378662,
+    "token_tahmini": 2174,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.106,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.044
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:04:30.090855",
+    "basari": true,
+    "raw": 0.6246,
+    "normalized": -0.0017,
+    "smoothed": 0.1318,
+    "sure": 26.266061782836914,
+    "token_tahmini": 2218,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.086,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.062
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:05:02.193742",
+    "basari": true,
+    "raw": 0.6565,
+    "normalized": 0.1856,
+    "smoothed": 0.1479,
+    "sure": 15.286159753799438,
+    "token_tahmini": 2171,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.103,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:05:17.723846",
+    "basari": true,
+    "raw": 0.6687,
+    "normalized": 0.2566,
+    "smoothed": 0.1805,
+    "sure": 10.482835054397583,
+    "token_tahmini": 2312,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.11,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.042
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:06:27.406963",
+    "basari": true,
+    "raw": 0.6742,
+    "normalized": 0.2889,
+    "smoothed": 0.213,
+    "sure": 9.46614933013916,
+    "token_tahmini": 2228,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.114,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.039
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:06:52.754844",
+    "basari": true,
+    "raw": 0.6928,
+    "normalized": 0.3972,
+    "smoothed": 0.2683,
+    "sure": 8.045039653778076,
+    "token_tahmini": 1716,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.124,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.031
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:07:02.972274",
+    "basari": true,
+    "raw": 0.6693,
+    "normalized": 0.2603,
+    "smoothed": 0.2659,
+    "sure": 9.120014667510986,
+    "token_tahmini": 2476,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.111,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.042
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:13:33.862648",
+    "basari": true,
+    "raw": 0.7008,
+    "normalized": 0.4444,
+    "smoothed": 0.3195,
+    "sure": 7.165406942367554,
+    "token_tahmini": 1557,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.129,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.028
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:13:44.608230",
+    "basari": true,
+    "raw": 0.6801,
+    "normalized": 0.3236,
+    "smoothed": 0.3207,
+    "sure": 8.993828535079956,
+    "token_tahmini": 2062,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.117,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.037
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:13:52.690135",
+    "basari": true,
+    "raw": 0.6862,
+    "normalized": 0.3595,
+    "smoothed": 0.3324,
+    "sure": 6.6461076736450195,
+    "token_tahmini": 2158,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.121,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.035
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:14:04.960842",
+    "basari": true,
+    "raw": 0.677,
+    "normalized": 0.3058,
+    "smoothed": 0.3244,
+    "sure": 11.075949907302856,
+    "token_tahmini": 1890,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.114,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.037
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:14:25.508481",
+    "basari": true,
+    "raw": 0.689,
+    "normalized": 0.3758,
+    "smoothed": 0.3398,
+    "sure": 7.310001850128174,
+    "token_tahmini": 1960,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.122,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.033
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:14:47.465249",
+    "basari": true,
+    "raw": 0.6385,
+    "normalized": 0.081,
+    "smoothed": 0.2622,
+    "sure": 20.781919956207275,
+    "token_tahmini": 2257,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.093,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.055
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:16:21.514426",
+    "basari": true,
+    "raw": 0.6169,
+    "normalized": -0.045,
+    "smoothed": 0.17,
+    "sure": 41.48770070075989,
+    "token_tahmini": 2130,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.082,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.066
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:16:53.752235",
+    "basari": true,
+    "raw": 0.6605,
+    "normalized": 0.2434,
+    "smoothed": 0.192,
+    "sure": 13.508242845535278,
+    "token_tahmini": 2239,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.105,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:17:36.086607",
+    "basari": true,
+    "raw": 0.6733,
+    "normalized": 0.3151,
+    "smoothed": 0.2289,
+    "sure": 10.511058330535889,
+    "token_tahmini": 2117,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.113,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.039
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:17:45.221086",
+    "basari": true,
+    "raw": 0.6781,
+    "normalized": 0.3418,
+    "smoothed": 0.2628,
+    "sure": 7.652071714401245,
+    "token_tahmini": 2327,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.116,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.038
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:17:54.473917",
+    "basari": true,
+    "raw": 0.6779,
+    "normalized": 0.3405,
+    "smoothed": 0.2861,
+    "sure": 8.068461656570435,
+    "token_tahmini": 2278,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.116,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.038
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:18:05.005880",
+    "basari": true,
+    "raw": 0.6732,
+    "normalized": 0.3141,
+    "smoothed": 0.2945,
+    "sure": 8.751694202423096,
+    "token_tahmini": 2370,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.113,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:19:12.753565",
+    "basari": true,
+    "raw": 0.6607,
+    "normalized": 0.2443,
+    "smoothed": 0.2794,
+    "sure": 12.014147520065308,
+    "token_tahmini": 2438,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.106,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:20:37.984354",
+    "basari": true,
+    "raw": 0.6203,
+    "normalized": 0.0191,
+    "smoothed": 0.2013,
+    "sure": 33.97840452194214,
+    "token_tahmini": 1948,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.084,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.063
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:30:46.141642",
+    "basari": true,
+    "raw": 0.7011,
+    "normalized": 0.4704,
+    "smoothed": 0.282,
+    "sure": 7.07483172416687,
+    "token_tahmini": 1557,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.129,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.028
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:31:01.507450",
+    "basari": true,
+    "raw": 0.6554,
+    "normalized": 0.2149,
+    "smoothed": 0.2619,
+    "sure": 13.83690094947815,
+    "token_tahmini": 2417,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.103,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:32:23.306285",
+    "basari": true,
+    "raw": 0.6159,
+    "normalized": -0.0059,
+    "smoothed": 0.1816,
+    "sure": 31.547231435775757,
+    "token_tahmini": 2180,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.082,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.066
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:33:43.257978",
+    "basari": true,
+    "raw": 0.6148,
+    "normalized": -0.0068,
+    "smoothed": 0.1251,
+    "sure": 33.342891693115234,
+    "token_tahmini": 2242,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.082,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.067
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:35:09.951078",
+    "basari": true,
+    "raw": 0.6087,
+    "normalized": -0.037,
+    "smoothed": 0.0765,
+    "sure": 39.343156814575195,
+    "token_tahmini": 2571,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.08,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.071
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:36:14.684527",
+    "basari": true,
+    "raw": 0.6683,
+    "normalized": 0.3493,
+    "smoothed": 0.1583,
+    "sure": 10.53816032409668,
+    "token_tahmini": 2320,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.11,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.042
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:36:55.299147",
+    "basari": true,
+    "raw": 0.6729,
+    "normalized": 0.3765,
+    "smoothed": 0.2238,
+    "sure": 10.206233024597168,
+    "token_tahmini": 2176,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.113,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:37:08.239706",
+    "basari": true,
+    "raw": 0.6732,
+    "normalized": 0.3783,
+    "smoothed": 0.2702,
+    "sure": 7.6409101486206055,
+    "token_tahmini": 2522,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.114,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:37:22.331807",
+    "basari": true,
+    "raw": 0.6686,
+    "normalized": 0.3513,
+    "smoothed": 0.2945,
+    "sure": 12.874091148376465,
+    "token_tahmini": 1981,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.11,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.041
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:37:31.893934",
+    "basari": true,
+    "raw": 0.6781,
+    "normalized": 0.4067,
+    "smoothed": 0.3282,
+    "sure": 7.860157251358032,
+    "token_tahmini": 2299,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.116,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.038
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:37:40.988182",
+    "basari": true,
+    "raw": 0.6897,
+    "normalized": 0.4746,
+    "smoothed": 0.3721,
+    "sure": 7.928984880447388,
+    "token_tahmini": 1848,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.122,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.033
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:37:50.691146",
+    "basari": true,
+    "raw": 0.6784,
+    "normalized": 0.4088,
+    "smoothed": 0.3831,
+    "sure": 8.151951789855957,
+    "token_tahmini": 2244,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.116,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.038
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:42:55.171067",
+    "basari": true,
+    "raw": 0.7006,
+    "normalized": 0.5384,
+    "smoothed": 0.4297,
+    "sure": 7.219621181488037,
+    "token_tahmini": 1557,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.129,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.028
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:43:06.959973",
+    "basari": true,
+    "raw": 0.6801,
+    "normalized": 0.4206,
+    "smoothed": 0.427,
+    "sure": 9.328126668930054,
+    "token_tahmini": 2013,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.117,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.037
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:44:18.042468",
+    "basari": true,
+    "raw": 0.6117,
+    "normalized": 0.0178,
+    "smoothed": 0.3042,
+    "sure": 33.24936532974243,
+    "token_tahmini": 2407,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.081,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.069
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:45:48.330173",
+    "basari": true,
+    "raw": 0.6138,
+    "normalized": 0.0298,
+    "smoothed": 0.2219,
+    "sure": 37.779935359954834,
+    "token_tahmini": 2297,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.081,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.068
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:47:15.780652",
+    "basari": true,
+    "raw": 0.6155,
+    "normalized": 0.0401,
+    "smoothed": 0.1674,
+    "sure": 36.056066036224365,
+    "token_tahmini": 2203,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.082,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.066
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:48:41.794507",
+    "basari": true,
+    "raw": 0.6312,
+    "normalized": 0.1326,
+    "smoothed": 0.1569,
+    "sure": 22.503894329071045,
+    "token_tahmini": 2384,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.09,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.059
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:50:06.845710",
+    "basari": true,
+    "raw": 0.6199,
+    "normalized": 0.0663,
+    "smoothed": 0.1297,
+    "sure": 28.1956889629364,
+    "token_tahmini": 2205,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.084,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.064
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:51:41.365424",
+    "basari": true,
+    "raw": 0.6109,
+    "normalized": 0.013,
+    "smoothed": 0.0947,
+    "sure": 32.95018982887268,
+    "token_tahmini": 2451,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.08,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.069
+    }
+  },
+  {
+    "zaman": "2026-03-01 07:52:45.447153",
+    "basari": true,
+    "raw": 0.6796,
+    "normalized": 0.7672,
+    "smoothed": 0.2965,
+    "sure": 8.815108299255371,
+    "token_tahmini": 2106,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.117,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.037
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:01:50.072070",
+    "basari": true,
+    "raw": 0.7121,
+    "normalized": 1.1186,
+    "smoothed": 0.5431,
+    "sure": 4.524449348449707,
+    "token_tahmini": 1557,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.137,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.025
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:01:57.842014",
+    "basari": true,
+    "raw": 0.6828,
+    "normalized": 0.7171,
+    "smoothed": 0.5953,
+    "sure": 7.5942816734313965,
+    "token_tahmini": 2152,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.119,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.036
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:02:14.552503",
+    "basari": true,
+    "raw": 0.6722,
+    "normalized": 0.6141,
+    "smoothed": 0.601,
+    "sure": 16.699517726898193,
+    "token_tahmini": 1301,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.11,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.038
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:02:29.043434",
+    "basari": true,
+    "raw": 0.6621,
+    "normalized": 0.5166,
+    "smoothed": 0.5757,
+    "sure": 14.007827520370483,
+    "token_tahmini": 2100,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.106,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.044
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:03:28.543095",
+    "basari": true,
+    "raw": 0.6153,
+    "normalized": 0.0637,
+    "smoothed": 0.4221,
+    "sure": 39.10895109176636,
+    "token_tahmini": 2215,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.082,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.067
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:04:57.772018",
+    "basari": true,
+    "raw": 0.6159,
+    "normalized": 0.0699,
+    "smoothed": 0.3164,
+    "sure": 38.81924033164978,
+    "token_tahmini": 2181,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.082,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.066
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:06:33.533478",
+    "basari": true,
+    "raw": 0.6117,
+    "normalized": 0.029,
+    "smoothed": 0.2302,
+    "sure": 41.647767066955566,
+    "token_tahmini": 2408,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.081,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.069
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:08:06.374633",
+    "basari": true,
+    "raw": 0.6183,
+    "normalized": 0.0931,
+    "smoothed": 0.1891,
+    "sure": 33.84191083908081,
+    "token_tahmini": 2053,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.083,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.065
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:09:31.440513",
+    "basari": true,
+    "raw": 0.6156,
+    "normalized": 0.0666,
+    "smoothed": 0.1523,
+    "sure": 35.779608964920044,
+    "token_tahmini": 2199,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.082,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.066
+    }
+  },
+  {
+    "zaman": "2026-03-01 08:10:25.370586",
+    "basari": true,
+    "raw": 0.7179,
+    "normalized": 1.056,
+    "smoothed": 0.4234,
+    "sure": 4.127472877502441,
+    "token_tahmini": 1428,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.141,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.023
+    }
+  },
+  {
+    "zaman": "2026-03-01 20:44:00.564972",
+    "basari": true,
+    "raw": 0.6288,
+    "normalized": 0.1839,
+    "smoothed": 0.3515,
+    "sure": 84.94611883163452,
+    "token_tahmini": 1509,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.087,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.058
+    }
+  },
+  {
+    "zaman": "2026-03-01 23:37:31.572778",
+    "basari": true,
+    "raw": 0.6185,
+    "normalized": 0.0899,
+    "smoothed": 0.273,
+    "sure": 91.18073773384094,
+    "token_tahmini": 2043,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.083,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.065
+    }
+  },
+  {
+    "zaman": "2026-03-02 09:51:14.789815",
+    "basari": true,
+    "raw": 0.62,
+    "normalized": 0.1033,
+    "smoothed": 0.2221,
+    "sure": 134.25435733795166,
+    "token_tahmini": 1966,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.084,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.064
+    }
+  },
+  {
+    "zaman": "2026-03-03 20:42:48.187843",
+    "basari": true,
+    "raw": 0.6215,
+    "normalized": 0.1174,
+    "smoothed": 0.1907,
+    "sure": 98.26475930213928,
+    "token_tahmini": 1885,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.084,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.063
+    }
+  },
+  {
+    "zaman": "2026-03-03 20:45:23.905301",
+    "basari": true,
+    "raw": 0.6215,
+    "normalized": 0.1174,
+    "smoothed": 0.1687,
+    "sure": 77.7946469783783,
+    "token_tahmini": 1885,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.084,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.063
+    }
+  },
+  {
+    "zaman": "2026-03-04 00:21:23.840135",
+    "basari": true,
+    "raw": 0.6293,
+    "normalized": 0.1887,
+    "smoothed": 0.1747,
+    "sure": 37.97509551048279,
+    "token_tahmini": 1482,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.087,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.058
+    }
+  },
+  {
+    "zaman": "2026-03-04 00:23:58.842459",
+    "basari": true,
+    "raw": 0.6337,
+    "normalized": 0.2292,
+    "smoothed": 0.1911,
+    "sure": 58.58741569519043,
+    "token_tahmini": 1258,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.089,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.055
+    }
+  },
+  {
+    "zaman": "2026-03-04 00:59:04.969778",
+    "basari": true,
+    "raw": 0.6206,
+    "normalized": 0.109,
+    "smoothed": 0.1665,
+    "sure": 56.82085132598877,
+    "token_tahmini": 1933,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.084,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.063
+    }
+  },
+  {
+    "zaman": "2026-03-04 01:16:19.182313",
+    "basari": true,
+    "raw": 0.6314,
+    "normalized": 0.2074,
+    "smoothed": 0.1788,
+    "sure": 32.53472375869751,
+    "token_tahmini": 1378,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.088,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.057
+    }
+  },
+  {
+    "zaman": "2026-03-04 19:42:24.680827",
+    "basari": true,
+    "raw": 0.6546,
+    "normalized": 0.4201,
+    "smoothed": 0.2512,
+    "sure": 29.753467082977295,
+    "token_tahmini": 283,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.098,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.043
+    }
+  },
+  {
+    "zaman": "2026-03-05 02:21:20.175084",
+    "basari": true,
+    "raw": 0.6629,
+    "normalized": 0.4959,
+    "smoothed": 0.3246,
+    "sure": 24.115230560302734,
+    "token_tahmini": 677,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.103,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-03-05 02:22:37.007298",
+    "basari": true,
+    "raw": 0.643,
+    "normalized": 0.3138,
+    "smoothed": 0.3214,
+    "sure": 57.96121406555176,
+    "token_tahmini": 801,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.093,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.05
+    }
+  },
+  {
+    "zaman": "2026-03-05 02:23:49.799639",
+    "basari": true,
+    "raw": 0.6505,
+    "normalized": 0.383,
+    "smoothed": 0.3399,
+    "sure": 35.39051270484924,
+    "token_tahmini": 439,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-05 02:27:06.796438",
+    "basari": true,
+    "raw": 0.6476,
+    "normalized": 0.3566,
+    "smoothed": 0.3449,
+    "sure": 99.45352101325989,
+    "token_tahmini": 576,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-05 02:28:32.437039",
+    "basari": true,
+    "raw": 0.6873,
+    "normalized": 0.7199,
+    "smoothed": 0.4574,
+    "sure": 18.88828182220459,
+    "token_tahmini": 388,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.117,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.03
+    }
+  },
+  {
+    "zaman": "2026-03-05 02:29:09.526469",
+    "basari": true,
+    "raw": 0.6892,
+    "normalized": 0.7373,
+    "smoothed": 0.5414,
+    "sure": 18.486303567886353,
+    "token_tahmini": 371,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.118,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.029
+    }
+  },
+  {
+    "zaman": "2026-03-05 02:29:41.671812",
+    "basari": true,
+    "raw": 0.6894,
+    "normalized": 0.7393,
+    "smoothed": 0.6008,
+    "sure": 17.669585466384888,
+    "token_tahmini": 478,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.119,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.029
+    }
+  },
+  {
+    "zaman": "2026-03-05 19:50:33.962588",
+    "basari": true,
+    "raw": 0.6517,
+    "normalized": 0.3935,
+    "smoothed": 0.5386,
+    "sure": 48.67433166503906,
+    "token_tahmini": 385,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-05 19:52:26.297197",
+    "basari": true,
+    "raw": 0.6503,
+    "normalized": 0.3805,
+    "smoothed": 0.4912,
+    "sure": 66.52261972427368,
+    "token_tahmini": 452,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-06 16:39:47.134999",
+    "basari": true,
+    "raw": 0.6619,
+    "normalized": 0.4871,
+    "smoothed": 0.49,
+    "sure": 26.441556692123413,
+    "token_tahmini": 401,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.102,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.04
+    }
+  },
+  {
+    "zaman": "2026-03-07 17:29:37.823236",
+    "basari": true,
+    "raw": 0.6478,
+    "normalized": 0.3581,
+    "smoothed": 0.4504,
+    "sure": 30.579548358917236,
+    "token_tahmini": 568,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-07 17:30:38.980641",
+    "basari": true,
+    "raw": 0.6488,
+    "normalized": 0.367,
+    "smoothed": 0.4254,
+    "sure": 36.11584210395813,
+    "token_tahmini": 522,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 17:32:16.751297",
+    "basari": true,
+    "raw": 0.6502,
+    "normalized": 0.3799,
+    "smoothed": 0.4118,
+    "sure": 40.37216305732727,
+    "token_tahmini": 455,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-07 17:38:14.956056",
+    "basari": true,
+    "raw": 0.6509,
+    "normalized": 0.3865,
+    "smoothed": 0.4042,
+    "sure": 42.61410403251648,
+    "token_tahmini": 421,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-07 17:39:43.698813",
+    "basari": true,
+    "raw": 0.6483,
+    "normalized": 0.3493,
+    "smoothed": 0.3877,
+    "sure": 69.60022687911987,
+    "token_tahmini": 546,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-07 18:08:11.834218",
+    "basari": true,
+    "raw": 0.6506,
+    "normalized": 0.3709,
+    "smoothed": 0.3827,
+    "sure": 53.5186493396759,
+    "token_tahmini": 436,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-07 18:11:35.406758",
+    "basari": true,
+    "raw": 0.6489,
+    "normalized": 0.3555,
+    "smoothed": 0.3746,
+    "sure": 43.89695382118225,
+    "token_tahmini": 514,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 18:16:09.956661",
+    "basari": true,
+    "raw": 0.6471,
+    "normalized": 0.3379,
+    "smoothed": 0.3636,
+    "sure": 74.91655850410461,
+    "token_tahmini": 604,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.094,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-07 20:01:28.415772",
+    "basari": true,
+    "raw": 0.6538,
+    "normalized": 0.4008,
+    "smoothed": 0.3748,
+    "sure": 29.454298734664917,
+    "token_tahmini": 360,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.097,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.044
+    }
+  },
+  {
+    "zaman": "2026-03-07 20:07:15.590073",
+    "basari": true,
+    "raw": 0.6326,
+    "normalized": 0.2024,
+    "smoothed": 0.3231,
+    "sure": 95.83321189880371,
+    "token_tahmini": 1317,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.088,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.056
+    }
+  },
+  {
+    "zaman": "2026-03-07 20:14:29.088454",
+    "basari": true,
+    "raw": 0.6491,
+    "normalized": 0.3569,
+    "smoothed": 0.3332,
+    "sure": 121.66272139549255,
+    "token_tahmini": 507,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 20:15:16.774069",
+    "basari": true,
+    "raw": 0.6482,
+    "normalized": 0.3489,
+    "smoothed": 0.3379,
+    "sure": 44.85721945762634,
+    "token_tahmini": 548,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-07 20:17:38.002620",
+    "basari": true,
+    "raw": 0.6763,
+    "normalized": 0.6114,
+    "smoothed": 0.42,
+    "sure": 20.830663681030273,
+    "token_tahmini": 556,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.111,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.034
+    }
+  },
+  {
+    "zaman": "2026-03-07 20:21:44.179338",
+    "basari": true,
+    "raw": 0.668,
+    "normalized": 0.5338,
+    "smoothed": 0.4541,
+    "sure": 23.627231121063232,
+    "token_tahmini": 519,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.106,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.038
+    }
+  },
+  {
+    "zaman": "2026-03-07 20:57:50.556779",
+    "basari": true,
+    "raw": 0.6411,
+    "normalized": 0.2827,
+    "smoothed": 0.4027,
+    "sure": 79.27723717689514,
+    "token_tahmini": 890,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.092,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.051
+    }
+  },
+  {
+    "zaman": "2026-03-07 21:02:13.946494",
+    "basari": true,
+    "raw": 0.6478,
+    "normalized": 0.3449,
+    "smoothed": 0.3854,
+    "sure": 31.566188097000122,
+    "token_tahmini": 568,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-07 21:05:12.357186",
+    "basari": true,
+    "raw": 0.6495,
+    "normalized": 0.3607,
+    "smoothed": 0.378,
+    "sure": 59.50764989852905,
+    "token_tahmini": 488,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 21:06:49.999583",
+    "basari": true,
+    "raw": 0.6494,
+    "normalized": 0.3597,
+    "smoothed": 0.3725,
+    "sure": 88.42393445968628,
+    "token_tahmini": 493,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 21:07:57.178449",
+    "basari": true,
+    "raw": 0.6482,
+    "normalized": 0.3487,
+    "smoothed": 0.3654,
+    "sure": 55.41592574119568,
+    "token_tahmini": 549,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-07 21:09:05.509236",
+    "basari": true,
+    "raw": 0.6507,
+    "normalized": 0.3668,
+    "smoothed": 0.3658,
+    "sure": 53.705719232559204,
+    "token_tahmini": 433,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-07 21:13:06.965568",
+    "basari": true,
+    "raw": 0.6494,
+    "normalized": 0.3551,
+    "smoothed": 0.3626,
+    "sure": 83.91472387313843,
+    "token_tahmini": 492,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 21:14:43.637418",
+    "basari": true,
+    "raw": 0.6489,
+    "normalized": 0.3501,
+    "smoothed": 0.3588,
+    "sure": 74.62176012992859,
+    "token_tahmini": 517,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 21:16:49.211061",
+    "basari": true,
+    "raw": 0.6475,
+    "normalized": 0.3371,
+    "smoothed": 0.3523,
+    "sure": 103.87382054328918,
+    "token_tahmini": 583,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.094,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-07 21:17:58.974818",
+    "basari": true,
+    "raw": 0.649,
+    "normalized": 0.3513,
+    "smoothed": 0.352,
+    "sure": 51.04995131492615,
+    "token_tahmini": 511,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 22:15:28.185645",
+    "basari": true,
+    "raw": 0.6499,
+    "normalized": 0.3594,
+    "smoothed": 0.3542,
+    "sure": 92.12542533874512,
+    "token_tahmini": 470,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 22:16:44.790699",
+    "basari": true,
+    "raw": 0.6518,
+    "normalized": 0.3778,
+    "smoothed": 0.3613,
+    "sure": 66.91348695755005,
+    "token_tahmini": 378,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-07 22:17:31.134412",
+    "basari": true,
+    "raw": 0.6526,
+    "normalized": 0.3852,
+    "smoothed": 0.3685,
+    "sure": 40.27494478225708,
+    "token_tahmini": 341,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.097,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.044
+    }
+  },
+  {
+    "zaman": "2026-03-07 22:23:31.386102",
+    "basari": true,
+    "raw": 0.6494,
+    "normalized": 0.3303,
+    "smoothed": 0.357,
+    "sure": 50.86742186546326,
+    "token_tahmini": 493,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-07 22:24:35.454090",
+    "basari": true,
+    "raw": 0.6507,
+    "normalized": 0.3427,
+    "smoothed": 0.3527,
+    "sure": 48.83920073509216,
+    "token_tahmini": 433,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-07 22:25:31.951508",
+    "basari": true,
+    "raw": 0.6507,
+    "normalized": 0.3243,
+    "smoothed": 0.3442,
+    "sure": 44.05773138999939,
+    "token_tahmini": 429,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.096,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.045
+    }
+  },
+  {
+    "zaman": "2026-03-08 00:40:26.092858",
+    "basari": true,
+    "raw": 0.6488,
+    "normalized": 0.4273,
+    "smoothed": 0.3691,
+    "sure": 70.44105386734009,
+    "token_tahmini": 521,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.095,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.046
+    }
+  },
+  {
+    "zaman": "2026-03-08 00:48:11.052692",
+    "basari": true,
+    "raw": 0.6473,
+    "normalized": 0.4066,
+    "smoothed": 0.3803,
+    "sure": 100.19336795806885,
+    "token_tahmini": 591,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.094,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.047
+    }
+  },
+  {
+    "zaman": "2026-03-08 00:52:32.126726",
+    "basari": true,
+    "raw": 0.6359,
+    "normalized": 0.2295,
+    "smoothed": 0.3351,
+    "sure": 127.24272990226746,
+    "token_tahmini": 1148,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.09,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.054
+    }
+  },
+  {
+    "zaman": "2026-03-08 01:18:24.424432",
+    "basari": true,
+    "raw": 0.6356,
+    "normalized": 0.2175,
+    "smoothed": 0.2998,
+    "sure": 128.3813831806183,
+    "token_tahmini": 1166,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.09,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.054
+    }
+  },
+  {
+    "zaman": "2026-03-08 01:32:06.951749",
+    "basari": true,
+    "raw": 0.6358,
+    "normalized": 0.2204,
+    "smoothed": 0.276,
+    "sure": 127.94493389129639,
+    "token_tahmini": 1156,
+    "formula": {
+      "basari_katkisi": 0.5,
+      "verimlilik_katkisi": 0.09,
+      "kullanici_katkisi": 0.1,
+      "maliyet_cezasi": 0.054
+    }
+  }
+]
