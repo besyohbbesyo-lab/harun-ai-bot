@@ -12,6 +12,7 @@ jobs:
     env:
       GROQ_API_KEY: gsk_test_dummy_key_for_ci
       TELEGRAM_BOT_TOKEN: "0000000000:AAAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaaa"
+      DISPLAY: ":99"
 
     steps:
       - name: Checkout code
@@ -27,6 +28,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ffmpeg portaudio19-dev xvfb
+          Xvfb :99 -screen 0 1024x768x24 &
 
       - name: Install Python dependencies
         run: |
@@ -39,8 +41,8 @@ jobs:
         run: ruff check . --output-format=github
 
       - name: Run tests
-        run: xvfb-run pytest tests/ -q --tb=short
+        run: pytest tests/ -q --tb=short
 
       - name: Coverage report
         continue-on-error: true
-        run: xvfb-run pytest tests/ -q --cov --cov-report=term-missing --tb=short
+        run: pytest tests/ -q --cov --cov-report=term-missing --tb=short
