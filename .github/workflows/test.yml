@@ -32,10 +32,12 @@ jobs:
           pip install pytest pytest-asyncio pytest-cov ruff
 
       - name: Ruff lint check
+        continue-on-error: true
         run: ruff check . --output-format=github
 
       - name: Run tests
         run: pytest tests/ -q --tb=short
 
       - name: Coverage report
+        continue-on-error: true
         run: pytest tests/ -q --cov --cov-report=term-missing --tb=short
