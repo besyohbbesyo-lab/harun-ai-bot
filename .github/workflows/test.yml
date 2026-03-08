@@ -9,6 +9,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      GROQ_API_KEY: gsk_test_dummy_key_for_ci
+      TELEGRAM_BOT_TOKEN: "0000000000:AAAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaaa"
 
     steps:
       - name: Checkout code
