@@ -12,6 +12,7 @@ jobs:
     env:
       GROQ_API_KEY: gsk_test_dummy_key_for_ci
       TELEGRAM_BOT_TOKEN: "0000000000:AAAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaaa"
+      DISPLAY: ":99"
 
     steps:
       - name: Checkout code
@@ -26,7 +27,8 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends ffmpeg portaudio19-dev
+          sudo apt-get install -y --no-install-recommends ffmpeg portaudio19-dev xvfb
+          Xvfb :99 -screen 0 1024x768x24 &
 
       - name: Install Python dependencies
         run: |
