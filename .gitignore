@@ -46,9 +46,9 @@ Thumbs.db
 .DS_Store
 desktop.ini
 .pytest_cache/
-  
-rag/kb.jsonl  
-*.bak* 
-  
-rag/kb.jsonl  
-*.bak* 
+
+rag/kb.jsonl
+*.bak*
+
+rag/kb.jsonl
+*.bak*
