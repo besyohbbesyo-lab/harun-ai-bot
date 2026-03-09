@@ -9,7 +9,24 @@ from pathlib import Path
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from core.globals import *
+from core.globals import (
+    VISION_AKTIF,
+    EgitimToplayici,
+    code_runner,
+    egitim,
+    egitim_store,
+    guvenlik_ozeti,
+    memory,
+    model_mgr,
+    policy,
+    prompt_evo,
+    reward_sys,
+    rotator,
+    run_selftests,
+    strategy_mgr,
+    supervisor,
+    write_report,
+)
 from core.utils import log_yaz
 from handlers.message import _yetki_kontrol
 from services.chat_service import ab_prompt_testini_hazirla, ask_ai
