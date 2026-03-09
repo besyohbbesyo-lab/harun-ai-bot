@@ -3,6 +3,7 @@
 
 import asyncio
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -10,7 +11,16 @@ from telegram import Update
 from telegram.ext import ContextTypes
 
 from core.decorators import gorev_kaydet, otomasyon_gerekli, yetki_gerekli
-from core.globals import *
+from core.globals import (
+    MASAUSTU,
+    OTOMASYON_AKTIF,
+    VISION_AKTIF,
+    onay_kaydet,
+    onay_mesaji_olustur,
+    otomasyon,
+    search_engine,
+    vision,
+)
 from core.utils import log_yaz
 from services.chat_service import ask_ai
 
