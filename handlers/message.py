@@ -11,7 +11,30 @@ from pathlib import Path
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from core.globals import *
+from core.globals import (
+    BASE_DIR,
+    OTOMASYON_AKTIF,
+    SES_AKTIF,
+    _son_yanit,
+    chat_id_kaydet,
+    check_auth,
+    egitim,
+    egitim_onay_kontrol,
+    egitim_store,
+    injection_kontrol,
+    injection_logla,
+    kullanici_soru_kaydet,
+    memory,
+    onay_al,
+    onay_kontrol,
+    onay_temizle,
+    otomasyon,
+    otomatik_egitim_kontrol,
+    pc,
+    rate_limit_kontrol,
+    reward_sys,
+    ses_plugin,
+)
 from core.utils import log_yaz
 from memory_plugin import etm
 from services.chat_service import ask_ai, auto_moderation_suggest, compute_reward_v2
