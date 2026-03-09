@@ -5,6 +5,7 @@
 import asyncio
 import hashlib
 import json
+import os
 import re
 
 # Reward v2 — noise pattern
@@ -18,7 +19,26 @@ from groq import Groq
 
 from cache_manager import yanit_cache
 from core.ab_testing import Varyant, VaryantSonuc, ab_test_al_veya_olustur
-from core.globals import *
+from core.globals import (
+    CFG,
+    ask_deepseek,
+    ask_gemini,
+    confidence_hesapla,
+    confidence_metni_olustur,
+    consistency_hesapla,
+    consistency_kaydet,
+    hata_siniflandir,
+    memory,
+    model_mgr,
+    policy,
+    prompt_evo,
+    reward_sys,
+    rotator,
+    search_engine,
+    soru_hash_olustur,
+    strategy_mgr,
+    supervisor,
+)
 from core.resilience import CircuitOpenError, cb_gemini, cb_groq, cb_ollama
 from core.schemas import ToolResult, yeni_trace_id
 from core.utils import _safe_active_provider, log_yaz, normalize_provider
