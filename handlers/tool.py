@@ -10,7 +10,16 @@ from telegram import Update
 from telegram.ext import ContextTypes
 
 from core.decorators import gorev_kaydet, yetki_gerekli
-from core.globals import *
+from core.globals import (
+    MASAUSTU,
+    code_runner,
+    doc_creator,
+    memory,
+    onay_kaydet,
+    onay_mesaji_olustur,
+    pdf_downloader,
+    search_engine,
+)
 from core.utils import log_yaz, son_dosyayi_bul
 from services.chat_service import ask_ai
 
@@ -143,20 +152,20 @@ async def word_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def plan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.args:
         await update.message.reply_text(
-            "🤖 Canavar Mod — Agent Zinciri\n\n"
+            "­şñû Canavar Mod — Agent Zinciri\n\n"
             "Kullanim: /plan <gorev>\n"
             "Ornek: /plan Python ile basit bir hesap makinesi yaz\n\n"
             "Yapilacaklar:\n"
-            "• Gorevi adim adim planlar\n"
-            "• Her adimi calistirip dogrular\n"
-            "• Basarisiz adimlari tekrar dener\n"
-            "• Sonunda detayli rapor uretir"
+            "— Gorevi adim adim planlar\n"
+            "— Her adimi calistirip dogrular\n"
+            "— Basarisiz adimlari tekrar dener\n"
+            "— Sonunda detayli rapor uretir"
         )
         return
 
     gorev = " ".join(context.args)
     await update.message.reply_text(
-        f"🚀 Canavar Mod baslatildi!\n\n"
+        f"Canavar Mod baslatildi!\n\n"
         f"Gorev: {gorev}\n\n"
         f"Adimlar gerceklestikce bildirim gelecek..."
     )
@@ -170,29 +179,29 @@ async def plan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         sonuc = await planner.run(gorev, ilerleme)
 
-        # Özet mesajı
+        # Ozet mesaji
         ozet_mesaj = (
-            f"🏁 Görev tamamlandı!\n\n"
-            f"📌 Görev: {gorev}\n"
-            f"✅ Başarılı: {sonuc.get('basarili', '?')}/{len(sonuc.get('adimlar', []))} adım\n"
-            f"⏱️ Süre: {sonuc.get('sure_s', '?')}s\n\n"
-            f"📝 Özet:\n{sonuc['ozet']}"
+            f"Gorev tamamlandi!\n\n"
+            f"Gorev: {gorev}\n"
+            f"Basarili: {sonuc.get('basarili', '?')}/{len(sonuc.get('adimlar', []))} adim\n"
+            f"Sure: {sonuc.get('sure_s', '?')}s\n\n"
+            f"Ozet:\n{sonuc['ozet']}"
         )
         if len(ozet_mesaj) > 4000:
             ozet_mesaj = ozet_mesaj[:3997] + "..."
         await update.message.reply_text(ozet_mesaj)
 
-        # Detaylı rapor (ayrı mesaj)
+        # Detayli rapor (ayri mesaj)
         rapor = sonuc.get("rapor", "")
         if rapor:
-            # Telegram 4096 char sınırı
+            # Telegram 4096 char siniri
             for i in range(0, min(len(rapor), 8000), 4000):
                 parca = rapor[i : i + 4000]
                 if parca.strip():
                     await update.message.reply_text(parca)
 
     except Exception as e:
-        await update.message.reply_text(f"❌ Planner hatasi: {e}")
+        await update.message.reply_text(f"Planner hatasi: {e}")
 
 
 @yetki_gerekli
@@ -262,7 +271,7 @@ async def mkdir_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     arguman = " ".join(context.args)
     user_id = update.message.chat_id
-    # Onay mekanizması
+    # Onay mekanizmasi
     onay_kaydet(user_id, "mkdir", arguman)
     await update.message.reply_text(onay_mesaji_olustur("mkdir", arguman))
 
