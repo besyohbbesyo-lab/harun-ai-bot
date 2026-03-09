@@ -46,7 +46,7 @@ class ToolResult:
 
     ok: bool
     data: Any = None
-    error: Optional[str] = None
+    error: str | None = None
     trace_id: str = field(default_factory=yeni_trace_id)
 
     def dict(self) -> dict:

@@ -98,8 +98,8 @@ class APIRotator:
         self._last_model: str = GROQ_MODELS[0][0]
 
     def aktif_provider_al(
-        self, gorev_turu: str = "genel", tercih_model_idx: Optional[int] = None
-    ) -> Optional[dict]:
+        self, gorev_turu: str = "genel", tercih_model_idx: int | None = None
+    ) -> dict | None:
         """
         Uygun key + model döndür.
         - gorev_turu'na göre başlangıç modeli seç
@@ -162,7 +162,7 @@ class APIRotator:
             pass
 
     def hata_kaydet(
-        self, isim: str, hata: str, cooldown_s: int = 60, model_id: Optional[str] = None
+        self, isim: str, hata: str, cooldown_s: int = 60, model_id: str | None = None
     ) -> None:
         """
         Rate limit hatası:

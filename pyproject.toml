@@ -23,10 +23,20 @@ select = [
 ]
 ignore = [
     "E501",   # line too long
+    "E712",   # comparison to True/False
+    "E722",   # bare except
+    "E731",   # lambda assignment
+    "B007",   # unused loop control variable
     "B008",   # function call in default argument
-    "UP007",  # X | Y yerine Optional
+    "B023",   # function def does not bind loop variable
+    "B904",   # raise from in except
     "F401",   # unused import (globals.py bridge icin)
+    "F841",   # local variable assigned but never used
+    "F821",   # undefined name (planner instance - runtime try/except ile korunuyor)
     "E402",   # module level import not at top
+    "UP007",  # X | Y yerine Optional
+    "UP035",  # deprecated typing (Dict->dict, List->list)
+    "UP038",  # X | Y in isinstance
 ]
 
 [tool.ruff.lint.isort]

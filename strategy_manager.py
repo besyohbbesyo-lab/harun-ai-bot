@@ -79,7 +79,7 @@ class StrategyManager:
         p["son_guncelleme"] = str(datetime.now())
         self._model_kaydet()
 
-    def en_iyi_model_bul(self, gorev_turu: str) -> Optional[str]:
+    def en_iyi_model_bul(self, gorev_turu: str) -> str | None:
         """
         Geçmiş veriye göre bu görev türü için en başarılı modeli döndür.
         Yeterli veri yoksa None döner (varsayılan kullanılır).
@@ -181,7 +181,7 @@ class StrategyManager:
         s["son_guncelleme"] = str(datetime.now())
         self._kaydet()
 
-    def en_iyi_strateji(self, gorev_turu: str) -> Optional[dict]:
+    def en_iyi_strateji(self, gorev_turu: str) -> dict | None:
         adaylar = [
             (imza, s)
             for imza, s in self.strategies.items()

@@ -72,7 +72,7 @@ class PluginManager:
             sonuclar[isim] = self.yukle(isim)
         return sonuclar
 
-    def al(self, isim: str) -> Optional[Any]:
+    def al(self, isim: str) -> Any | None:
         """Yuklenmis plugin modulunu doner. Yuklu degilse None."""
         if isim not in self._yuklenmis:
             self.yukle(isim)

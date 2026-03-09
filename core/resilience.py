@@ -41,7 +41,7 @@ class CircuitBreaker:
         self.timeout = timeout
         self.failures = 0
         self.state = self.CLOSED
-        self.opened_at: Optional[float] = None
+        self.opened_at: float | None = None
         self._lock = asyncio.Lock()
 
     # ── Durum geciş yardımcıları ──────────────────────────────

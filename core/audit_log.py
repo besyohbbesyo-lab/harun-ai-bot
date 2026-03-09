@@ -7,7 +7,7 @@ from __future__ import annotations
 import json
 import time
 from datetime import datetime
-from enum import Enum
+from enum import Enum, StrEnum
 from pathlib import Path
 
 # ── Log Dosyasi ───────────────────────────────────────────────
@@ -16,7 +16,7 @@ SECURITY_LOG = BASE_DIR / "security.log"
 MAX_BOYUT_BYTES = 5 * 1024 * 1024  # 5MB — rotation icin
 
 
-class OlayTipi(str, Enum):
+class OlayTipi(StrEnum):
     # Giris / Kimlik
     GIRIS_BASARILI = "AUTH_SUCCESS"
     GIRIS_BASARISIZ = "AUTH_FAIL"

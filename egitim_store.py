@@ -25,7 +25,7 @@ def _now() -> str:
     return datetime.now().isoformat(timespec="seconds")
 
 
-def _audit(action: str, actor: dict[str, Any], record_id: Optional[str] = None, note: str = ""):
+def _audit(action: str, actor: dict[str, Any], record_id: str | None = None, note: str = ""):
     try:
         row = {"ts": _now(), "action": action, "record_id": record_id, "actor": actor, "note": note}
         with open(AUDIT_FILE, "a", encoding="utf-8") as f:
@@ -42,7 +42,7 @@ class EgitimStore:
       - Audit: egitim_audit.jsonl
     """
 
-    def __init__(self, db_path: Optional[str] = None):
+    def __init__(self, db_path: str | None = None):
         db_path = db_path or str(BASE_DIR / "memory_db")
         self.client = chromadb.PersistentClient(path=db_path)
         self.ef = embedding_functions.DefaultEmbeddingFunction()
@@ -64,7 +64,7 @@ class EgitimStore:
         chat_id: int,
         basari: bool,
         smoothed_reward: float,
-        extra: Optional[dict[str, Any]] = None,
+        extra: dict[str, Any] | None = None,
     ) -> str:
         rid = str(uuid.uuid4())
         meta = {
@@ -141,7 +141,7 @@ class EgitimStore:
         _audit("STATUS_CHANGE", actor, rid, f"{old}->{new_status} | {note}".strip())
         return {"ok": True, "id": rid, "old": old, "new": new_status}
 
-    def gate_kontrol(self, actor: Optional[dict[str, Any]] = None) -> dict[str, Any]:
+    def gate_kontrol(self, actor: dict[str, Any] | None = None) -> dict[str, Any]:
         actor = actor or {"user_id": None, "username": "system"}
         res = self.col.get(include=["metadatas", "documents"])
         metas = res.get("metadatas") or []
@@ -192,7 +192,7 @@ class EgitimStore:
         counts["TOTAL"] = sum(v for k, v in counts.items() if k != "TOTAL")
         return counts
 
-    def export_approved(self, out_path: Optional[str] = None) -> dict[str, Any]:
+    def export_approved(self, out_path: str | None = None) -> dict[str, Any]:
         """APPROVED kayıtları JSONL olarak dışa aktarır. İki format üretir:
         - prompt/completion
         - chat messages (OpenAI tarzı)
