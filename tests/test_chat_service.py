@@ -1007,3 +1007,528 @@ class TestAskLlamaLocalFineTuned:
         monkeypatch.setattr(chat_service, "cb_ollama", DummyCBOllama())
         sonuc = await chat_service.ask_llama_local("test prompt")
         assert "Lokal Hata" not in sonuc
+
+
+class TestAskAiAnaDallar:
+    """ask_ai() fonksiyonunun ana dallarini test eder (satir 498-825)."""
+
+    def _mock_tumu(self, monkeypatch, cs, **kw):
+        """ask_ai bagimliklarini toplu mock'la."""
+        cache_hit = kw.get("cache_hit")
+        secilen_model = kw.get("secilen_model", "lokal")
+        provider = kw.get("provider")
+        reward_val = kw.get("reward_val", 0.8)
+        varyant = kw.get("varyant")
+        memory_data = kw.get("memory_data", False)
+
+        class DummyCache:
+            def _key_olustur(self, prompt, gorev_turu):
+                return f"{prompt}:{gorev_turu}"
+
+            def al(self, key):
+                return cache_hit
+
+            def koy(self, key, value):
+                pass
+
+        class DummySupervisor:
+            def mod_belirle(self, gorev_turu, prompt_text):
+                return {"retrieval_depth": 2, "mod": "normal", "hafiza_destegi": True}
+
+            def guclendir(self, basari):
+                pass
+
+        class DummyPolicy:
+            def runtime_parametreleri_al(self, gorev_turu):
+                return {"retrieval_depth": 2, "mod": "normal"}
+
+            def guncelle(self, basari, sure):
+                pass
+
+        class DummyPromptEvo:
+            def prompt_sec(self, gorev_turu):
+                return None, None
+
+            def sonuc_kaydet(self, prompt_id, basari):
+                pass
+
+        class DummyEpisodik:
+            def ani_kaydet(self, **kwargs):
+                pass
+
+            def ani_bul(self, prompt, n=1):
+                if memory_data:
+                    return [{"baslik": "test_ani", "icerik": "ani icerik detay buraya"}]
+                return []
+
+        class DummyProsedur:
+            def prosedur_kaydet(self, **kwargs):
+                pass
+
+            def prosedur_bul(self, prompt, gorev_turu):
+                return "[Prosedur: test ref]" if memory_data else None
+
+        class DummyMemory:
+            episodik = DummyEpisodik()
+            prosedur = DummyProsedur()
+
+            def benzer_gorev_bul(self, prompt, n=3):
+                return ["gecmis deneyim 1"] if memory_data else []
+
+            def bilgi_ara(self, prompt, n=3):
+                return ["ilgili bilgi 1"] if memory_data else []
+
+            def hafizayi_guclendir(self, prompt, rwd):
+                pass
+
+        class DummyModelMgr:
+            def model_sec(self, prompt, gorev_turu):
+                return secilen_model
+
+        class DummyRotator:
+            def basari_kaydet(self, *a, **k):
+                pass
+
+            def hata_kaydet(self, *a, **k):
+                pass
+
+        class DummyRewardSys:
+            def hesapla(self, basari, sure, token):
+                return reward_val
+
+        class DummyStrategyMgr:
+            def imza_olustur(self, *a):
+                return "imza"
+
+            def sonuc_kaydet(self, *a):
+                pass
+
+        monkeypatch.setattr(cs, "yanit_cache", DummyCache())
+        monkeypatch.setattr(cs, "supervisor", DummySupervisor())
+        monkeypatch.setattr(cs, "policy", DummyPolicy())
+        monkeypatch.setattr(cs, "prompt_evo", DummyPromptEvo())
+        monkeypatch.setattr(cs, "memory", DummyMemory())
+        monkeypatch.setattr(cs, "model_mgr", DummyModelMgr())
+        monkeypatch.setattr(cs, "rotator", DummyRotator())
+        monkeypatch.setattr(cs, "reward_sys", DummyRewardSys())
+        monkeypatch.setattr(cs, "strategy_mgr", DummyStrategyMgr())
+        monkeypatch.setattr(cs, "yeni_trace_id", lambda: "t-trace")
+        monkeypatch.setattr(cs, "guncel_bilgi_gerekli_mi", lambda s: False)
+        monkeypatch.setattr(cs, "_ab_varyanti_uygula", lambda p, g, k: (p, varyant))
+        monkeypatch.setattr(cs, "_rag_build_context", lambda p, top_k=6: ("", []))
+        monkeypatch.setattr(cs, "soru_hash_olustur", lambda s: "h123")
+        monkeypatch.setattr(cs, "consistency_kaydet", lambda *a: None)
+        monkeypatch.setattr(cs, "consistency_hesapla", lambda s: 0.5)
+        monkeypatch.setattr(cs, "hata_siniflandir", lambda r: "yok")
+        monkeypatch.setattr(cs, "confidence_hesapla", lambda *a: 0.85)
+        monkeypatch.setattr(cs, "confidence_metni_olustur", lambda *a: "\n[Guven: 0.85]")
+        monkeypatch.setattr(cs, "_safe_active_provider", lambda r: provider)
+        monkeypatch.setenv("RAG_ENABLED", "0")
+
+    # ------------------------------------------------------------------
+    # Test 1: Cache hit — satir 507-509
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_cache_hit_dogrudan_doner(self, monkeypatch):
+        """Cache'de yanit varsa dogrudan doner, hicbir islem yapilmaz."""
+        from services import chat_service
+
+        self._mock_tumu(monkeypatch, chat_service, cache_hit="Cached yanit")
+        sonuc = await chat_service.ask_ai("test sorusu")
+        assert sonuc == "Cached yanit"
+
+    # ------------------------------------------------------------------
+    # Test 2: Lokal model basarili + hafiza + episodik + prosedur
+    # Satir 511-563, 594-605, 697-735, 765-779, 816-821
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_lokal_basarili_hafiza_ve_episodik(self, monkeypatch):
+        """Lokal model basarili, hafiza verileri var, episodik+prosedur kaydedilir."""
+        from services import chat_service
+
+        self._mock_tumu(
+            monkeypatch,
+            chat_service,
+            secilen_model="lokal",
+            reward_val=0.85,
+            memory_data=True,
+        )
+
+        async def fake_llama(prompt):
+            return (
+                "Bu basarili bir yanittir ve yeterince uzundur.\n"
+                "Adim 1: Ilk olarak bu islemi yapin detayli.\n"
+                "Adim 2: Sonra bu adimi tamamlayin dikkatle.\n"
+                "Adim 3: Son olarak kontrol edin ve bitirin."
+            )
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test sorusu", hafiza_destegi=True)
+        assert "basarili bir yanittir" in sonuc
+        assert "[Guven:" in sonuc
+
+    # ------------------------------------------------------------------
+    # Test 3: Cloud Groq basarili — satir 609-643
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_cloud_groq_basarili(self, monkeypatch):
+        """Cloud Groq provider basarili yanit doner."""
+        from services import chat_service
+
+        provider = {"name": "Groq", "api_key": "k", "model": "m", "max_tokens": 100}
+        self._mock_tumu(
+            monkeypatch, chat_service, secilen_model="cloud", provider=provider
+        )
+        monkeypatch.setattr(
+            chat_service,
+            "ask_groq",
+            lambda p, g="genel": "Cloud Groq basarili yanit yeterince uzun olmali.",
+        )
+        sonuc = await chat_service.ask_ai("test sorusu")
+        assert "Cloud Groq basarili" in sonuc
+
+    # ------------------------------------------------------------------
+    # Test 4: Tum cloud basarisiz → Ollama fallback — satir 691-694
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_cloud_basarisiz_ollama_fallback(self, monkeypatch):
+        """Cloud ask_groq None doner, yedek ayni isim → Ollama fallback."""
+        from services import chat_service
+
+        provider = {"name": "Groq", "api_key": "k", "model": "m", "max_tokens": 100}
+        self._mock_tumu(
+            monkeypatch, chat_service, secilen_model="cloud", provider=provider
+        )
+        monkeypatch.setattr(chat_service, "ask_groq", lambda p, g="genel": None)
+
+        async def fake_llama(prompt):
+            return "Ollama fallback yaniti yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test sorusu")
+        assert "Ollama fallback" in sonuc
+
+    # ------------------------------------------------------------------
+    # Test 5: Genel exception → ask_llama_local fallback — satir 823-825
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_genel_exception_llama_fallback(self, monkeypatch):
+        """ask_ai icinde genel exception → ask_llama_local ile fallback."""
+        from services import chat_service
+
+        self._mock_tumu(monkeypatch, chat_service)
+
+        class FailSupervisor:
+            def mod_belirle(self, gorev_turu, prompt_text):
+                raise RuntimeError("supervisor patladi")
+
+        monkeypatch.setattr(chat_service, "supervisor", FailSupervisor())
+
+        async def fake_llama(prompt):
+            return "Exception fallback yaniti yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test sorusu")
+        assert "Exception fallback" in sonuc
+
+    # ------------------------------------------------------------------
+    # Test 6: AB varyant B_yapisal sonuc kaydi — satir 781-814
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_ab_varyant_b_yapisal_sonuc_kaydedilir(self, monkeypatch):
+        """B_yapisal varyant secilmisse kalite kontrol + sonuc kaydedilir."""
+        from services import chat_service
+
+        class FakeVaryant:
+            ad = "B_yapisal"
+            konfig = {"prompt_prefix": ""}
+
+        class FakeMotor:
+            kayitlar = []
+
+            def sonuc_kaydet(self, sonuc):
+                self.kayitlar.append(sonuc)
+
+        motor = FakeMotor()
+        self._mock_tumu(
+            monkeypatch,
+            chat_service,
+            secilen_model="lokal",
+            varyant=FakeVaryant(),
+            reward_val=0.8,
+        )
+        monkeypatch.setattr(chat_service, "ab_prompt_testini_hazirla", lambda: motor)
+
+        async def fake_llama(prompt):
+            return (
+                "Bu yeterince uzun kaliteli bir yanittir ve B_yapisal "
+                "kalite kontrolunden gecmelidir. Detayli bilgi icermektedir. "
+                "Adim 1: Ilk adimdaki islem.\nAdim 2: Ikinci adim detay."
+            )
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test sorusu")
+        assert "yeterince uzun" in sonuc
+        assert len(motor.kayitlar) == 1
+
+    # ------------------------------------------------------------------
+    # Test 7: Dusuk reward → consistency re-check — satir 743-761
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_dusuk_reward_consistency_recheck(self, monkeypatch):
+        """smoothed_reward < 0.5 ise ikinci yanit alinip consistency hesaplanir."""
+        from services import chat_service
+
+        provider = {"name": "Groq", "api_key": "k", "model": "m", "max_tokens": 100}
+        self._mock_tumu(
+            monkeypatch,
+            chat_service,
+            secilen_model="lokal",
+            reward_val=0.3,
+            provider=provider,
+        )
+
+        async def fake_llama(prompt):
+            return "Lokal yanit biraz kisa ama anlamli on karakter."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        monkeypatch.setattr(
+            chat_service, "ask_groq", lambda p, g="genel": "ikinci yanit consistency icin"
+        )
+        sonuc = await chat_service.ask_ai("test sorusu")
+        assert sonuc  # Yanit donmeli
+
+    # ------------------------------------------------------------------
+    # Test 8: prompt_sablon {soru} dali — satir 522-524
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_prompt_sablon_soru_uygulanir(self, monkeypatch):
+        """prompt_evo {soru} sablonu varsa prompt'a uygulanir."""
+        from services import chat_service
+
+        self._mock_tumu(monkeypatch, chat_service, reward_val=0.8)
+
+        class SablonluEvo:
+            def prompt_sec(self, gorev_turu):
+                return ("pid-1", "Su soruyu yanitla: {soru}")
+
+            def sonuc_kaydet(self, pid, basari):
+                pass
+
+        monkeypatch.setattr(chat_service, "prompt_evo", SablonluEvo())
+
+        async def fake_llama(prompt):
+            return "Sablon uygulandi yanit yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test sorusu")
+        assert sonuc
+
+    # ------------------------------------------------------------------
+    # Test 9: guncel_bilgi web zenginlestirme — satir 527-534
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_guncel_bilgi_web_zenginlestirme(self, monkeypatch):
+        """guncel_bilgi_gerekli_mi True ise web_aramasiyla_zenginlestir cagirilir."""
+        from services import chat_service
+
+        self._mock_tumu(monkeypatch, chat_service, reward_val=0.8)
+        monkeypatch.setattr(chat_service, "guncel_bilgi_gerekli_mi", lambda s: True)
+        monkeypatch.setattr(
+            chat_service,
+            "web_aramasiyla_zenginlestir",
+            lambda s: "Web bilgisi burada yeterince uzun ve detayli.",
+        )
+
+        async def fake_llama(prompt):
+            return "Guncel bilgi yaniti yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("dolar kac lira?", gorev_turu="genel")
+        assert sonuc
+
+    # ------------------------------------------------------------------
+    # Test 10: hafiza prosedur + episodik sonuc var — satir 548-560
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_hafiza_prosedur_ve_episodik_sonuc(self, monkeypatch):
+        """Hafiza destegi acikken prosedur_bul ve ani_bul sonuclari prompt'a eklenir."""
+        from services import chat_service
+
+        self._mock_tumu(
+            monkeypatch, chat_service, reward_val=0.8, memory_data=True
+        )
+
+        async def fake_llama(prompt):
+            return "Hafiza destekli yanit yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test", hafiza_destegi=True)
+        assert sonuc
+
+    # ------------------------------------------------------------------
+    # Test 11: prompt_id varsa sonuc_kaydet cagirilir — satir 707-708
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_prompt_id_varsa_sonuc_kaydedilir(self, monkeypatch):
+        """prompt_evo bir prompt_id dondururse sonuc_kaydet cagirilir."""
+        from services import chat_service
+
+        self._mock_tumu(monkeypatch, chat_service, reward_val=0.8)
+
+        kaydedilenler = []
+
+        class TrackingEvo:
+            def prompt_sec(self, gorev_turu):
+                return ("pid-42", None)
+
+            def sonuc_kaydet(self, pid, basari):
+                kaydedilenler.append(pid)
+
+        monkeypatch.setattr(chat_service, "prompt_evo", TrackingEvo())
+
+        async def fake_llama(prompt):
+            return "Prompt evo yaniti yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test")
+        assert "pid-42" in kaydedilenler
+
+    # ------------------------------------------------------------------
+    # Test 12: AB sonuc kayit exception — satir 813-814
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_ab_sonuc_kayit_exception_sessizce_gecilir(self, monkeypatch):
+        """AB motor.sonuc_kaydet exception atarsa sessizce gecilir."""
+        from services import chat_service
+
+        class FakeVaryant:
+            ad = "A_klasik"
+            konfig = {"prompt_prefix": ""}
+
+        class FailMotor:
+            def sonuc_kaydet(self, sonuc):
+                raise RuntimeError("kayit patladi")
+
+        self._mock_tumu(
+            monkeypatch, chat_service, secilen_model="lokal", varyant=FakeVaryant()
+        )
+        monkeypatch.setattr(chat_service, "ab_prompt_testini_hazirla", lambda: FailMotor())
+
+        async def fake_llama(prompt):
+            return "AB exception yaniti yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test")
+        assert sonuc  # Exception yutulur, yanit doner
+
+    # ------------------------------------------------------------------
+    # Test 13: B_yapisal kalite reddedildi — satir 787-800
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_b_yapisal_kalite_reddedildi(self, monkeypatch):
+        """B_yapisal kisa yanit → kalite reddi log'lanir."""
+        from services import chat_service
+
+        class FakeVaryant:
+            ad = "B_yapisal"
+            konfig = {"prompt_prefix": ""}
+
+        class FakeMotor:
+            kayitlar = []
+
+            def sonuc_kaydet(self, sonuc):
+                self.kayitlar.append(sonuc)
+
+        motor = FakeMotor()
+        self._mock_tumu(
+            monkeypatch, chat_service, secilen_model="lokal", varyant=FakeVaryant(), reward_val=0.8
+        )
+        monkeypatch.setattr(chat_service, "ab_prompt_testini_hazirla", lambda: motor)
+
+        async def fake_llama(prompt):
+            # Kisa yanit — B_yapisal kalite kontrolunden gecemez
+            return "Cok kisa."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test")
+        assert sonuc
+        assert len(motor.kayitlar) == 1
+
+    # ------------------------------------------------------------------
+    # Test 14: prompt_sablon {prompt} dali — satir 522
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_prompt_sablon_prompt_uygulanir(self, monkeypatch):
+        """prompt_evo {prompt} sablonu varsa prompt'a uygulanir."""
+        from services import chat_service
+
+        self._mock_tumu(monkeypatch, chat_service, reward_val=0.8)
+
+        class SablonluEvo:
+            def prompt_sec(self, gorev_turu):
+                return ("pid-2", "Detayli yanit ver: {prompt}")
+
+            def sonuc_kaydet(self, pid, basari):
+                pass
+
+        monkeypatch.setattr(chat_service, "prompt_evo", SablonluEvo())
+
+        async def fake_llama(prompt):
+            return "Prompt sablon yaniti yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test sorusu")
+        assert sonuc
+
+    # ------------------------------------------------------------------
+    # Test 15: prosedur_bul exception → except dali — satir 551-552
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_prosedur_bul_exception_sessizce_gecilir(self, monkeypatch):
+        """memory.prosedur.prosedur_bul exception atarsa sessizce gecilir."""
+        from services import chat_service
+
+        self._mock_tumu(monkeypatch, chat_service, reward_val=0.8, memory_data=True)
+
+        class FailProsedur:
+            def prosedur_kaydet(self, **kw):
+                pass
+
+            def prosedur_bul(self, prompt, gorev_turu):
+                raise RuntimeError("prosedur patladi")
+
+        chat_service.memory.prosedur = FailProsedur()
+
+        async def fake_llama(prompt):
+            return "Prosedur exception yaniti yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test", hafiza_destegi=True)
+        assert sonuc
+
+    # ------------------------------------------------------------------
+    # Test 16: ani_bul exception → except dali — satir 559-560
+    # ------------------------------------------------------------------
+    @pytest.mark.asyncio
+    async def test_ani_bul_exception_sessizce_gecilir(self, monkeypatch):
+        """memory.episodik.ani_bul exception atarsa sessizce gecilir."""
+        from services import chat_service
+
+        self._mock_tumu(monkeypatch, chat_service, reward_val=0.8, memory_data=True)
+
+        class FailEpisodik:
+            def ani_kaydet(self, **kw):
+                pass
+
+            def ani_bul(self, prompt, n=1):
+                raise RuntimeError("episodik patladi")
+
+        chat_service.memory.episodik = FailEpisodik()
+
+        async def fake_llama(prompt):
+            return "Episodik exception yaniti yeterince uzun ve anlamli."
+
+        monkeypatch.setattr(chat_service, "ask_llama_local", fake_llama)
+        sonuc = await chat_service.ask_ai("test", hafiza_destegi=True)
+        assert sonuc
