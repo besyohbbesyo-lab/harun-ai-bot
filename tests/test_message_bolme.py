@@ -521,3 +521,499 @@ class TestHandleMessageGreeting:
 
         mock_ask.assert_called_once()
         assert mock_ask.call_args[0][0] == "Python nedir?"
+
+
+class TestHandleMessageAskAiException:
+    """ask_ai exception dalini test eder (satir 295-302)."""
+
+    def test_ask_ai_exception_hata_mesaji_gonderilir(self):
+        """ask_ai exception atarsa kullaniciya hata mesaji gider."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update, mock_context, patches = _handle_message_mock_setup(
+            mesaj_metni="Python nedir?",
+        )
+        # ask_ai exception atsin
+        failing_ask = patch(
+            "handlers.message.ask_ai",
+            new=AsyncMock(side_effect=RuntimeError("api patladi")),
+        )
+        # _metrics mock
+        mock_met = MagicMock()
+        metrics_patch = patch.object(hm, "_metrics", mock_met)
+
+        with (
+            patches["check_auth"],
+            patches["log_yaz"],
+            patches["rate_limit_kontrol"],
+            patches["injection_kontrol"],
+            patches["onay_kontrol"],
+            patches["egitim_onay_kontrol"],
+            patches["kullanici_soru_kaydet"],
+            patches["chat_id_kaydet"],
+            failing_ask,
+            metrics_patch,
+        ):
+            asyncio.run(hm.handle_message(mock_update, mock_context))
+
+        # Hata mesaji gonderildi
+        son_cagri = mock_update.message.reply_text.call_args[0][0]
+        assert "Hata" in son_cagri
+
+
+class TestHandleMessageTamAkis:
+    """handle_message tam basarili akis — _son_yanit, memory, egitim, ETM, egitim_store (satir 304-452)."""
+
+    def test_tam_basarili_akis_egitim_store_kaydeder(self):
+        """Normal mesaj: ask_ai basarili, reward hesaplanir, egitim_store'a kaydedilir."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update, mock_context, patches = _handle_message_mock_setup(
+            mesaj_metni="Python programlama nedir acikla",
+            ask_ai_val="Python genel amacli bir programlama dilidir ve cok yaygindir.",
+        )
+
+        # reward_sys.son_smoothed() gercek float donmeli
+        mock_reward = MagicMock()
+        mock_reward.son_smoothed.return_value = 0.75
+        patches["reward_sys"] = patch("handlers.message.reward_sys", mock_reward)
+
+        # egitim_store gercekci mock
+        mock_estore = MagicMock()
+        mock_estore.kaydet_ornek.return_value = None
+        mock_estore.gate_kontrol.return_value = {"gated": False, "new_count": 0}
+        patches["egitim_store"] = patch("handlers.message.egitim_store", mock_estore)
+
+        # _metrics mock
+        mock_met = MagicMock()
+        metrics_patch = patch.object(hm, "_metrics", mock_met)
+
+        with (
+            patches["check_auth"],
+            patches["log_yaz"],
+            patches["rate_limit_kontrol"],
+            patches["injection_kontrol"],
+            patches["onay_kontrol"],
+            patches["ask_ai"],
+            patches["egitim_onay_kontrol"],
+            patches["kullanici_soru_kaydet"],
+            patches["chat_id_kaydet"],
+            patches["memory"],
+            patches["egitim"],
+            patches["reward_sys"],
+            patches["etm"],
+            patches["egitim_store"],
+            metrics_patch,
+        ):
+            asyncio.run(hm.handle_message(mock_update, mock_context))
+
+        # egitim_store.kaydet_ornek cagrildi
+        mock_estore.kaydet_ornek.assert_called_once()
+        # _metrics.mesaj_sayac cagrildi
+        mock_met.mesaj_sayac.assert_called_once()
+
+    def test_egitim_filter_disabled_hala_kaydeder(self):
+        """EGITIM_FILTER_ENABLED=0 iken egitim filtre atlanir, yine kaydedilir."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update, mock_context, patches = _handle_message_mock_setup(
+            mesaj_metni="kisa test mesaji burada",
+            ask_ai_val="Yeterince uzun bir cevap olmali ki filtreden gecsin burada.",
+        )
+
+        mock_reward = MagicMock()
+        mock_reward.son_smoothed.return_value = 0.6
+        patches["reward_sys"] = patch("handlers.message.reward_sys", mock_reward)
+
+        mock_estore = MagicMock()
+        mock_estore.kaydet_ornek.return_value = None
+        mock_estore.gate_kontrol.return_value = {"gated": False}
+        patches["egitim_store"] = patch("handlers.message.egitim_store", mock_estore)
+
+        env_patch = patch.dict(os.environ, {"EGITIM_FILTER_ENABLED": "0"})
+
+        with (
+            patches["check_auth"],
+            patches["log_yaz"],
+            patches["rate_limit_kontrol"],
+            patches["injection_kontrol"],
+            patches["onay_kontrol"],
+            patches["ask_ai"],
+            patches["egitim_onay_kontrol"],
+            patches["kullanici_soru_kaydet"],
+            patches["chat_id_kaydet"],
+            patches["memory"],
+            patches["egitim"],
+            patches["reward_sys"],
+            patches["etm"],
+            patches["egitim_store"],
+            env_patch,
+        ):
+            asyncio.run(hm.handle_message(mock_update, mock_context))
+
+        mock_estore.kaydet_ornek.assert_called_once()
+
+    def test_egitim_filter_noise_keyword_engeller(self):
+        """Noise keyword mesaji ('test') egitim_store'a kaydedilmemeli."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update, mock_context, patches = _handle_message_mock_setup(
+            mesaj_metni="test",  # greeting degilse noise olarak engellenmeli
+            ask_ai_val="Bu bir test cevabi.",
+        )
+
+        # "test" greeting listesinde degil ama 4 karakterden kisa degil,
+        # fakat noise_keyword setinde var
+        # Ama once greetings kontrolune takilabilir... hayir "test" greetings'te yok.
+        # slash ile baslamiyor. Rate limit + injection OK.
+        # Ama "test" noise_keyword olarak engellenmeli (satir 364-377)
+
+        mock_reward = MagicMock()
+        mock_reward.son_smoothed.return_value = 0.5
+        patches["reward_sys"] = patch("handlers.message.reward_sys", mock_reward)
+
+        mock_estore = MagicMock()
+        mock_estore.kaydet_ornek.return_value = None
+        mock_estore.gate_kontrol.return_value = {"gated": False}
+        patches["egitim_store"] = patch("handlers.message.egitim_store", mock_estore)
+
+        with (
+            patches["check_auth"],
+            patches["log_yaz"],
+            patches["rate_limit_kontrol"],
+            patches["injection_kontrol"],
+            patches["onay_kontrol"],
+            patches["ask_ai"],
+            patches["egitim_onay_kontrol"],
+            patches["kullanici_soru_kaydet"],
+            patches["chat_id_kaydet"],
+            patches["memory"],
+            patches["egitim"],
+            patches["reward_sys"],
+            patches["etm"],
+            patches["egitim_store"],
+        ):
+            asyncio.run(hm.handle_message(mock_update, mock_context))
+
+        # "test" noise keyword → egitim_store.kaydet_ornek cagrilMAMALI
+        mock_estore.kaydet_ornek.assert_not_called()
+
+    def test_egitim_gate_gated_bildirim_gonderir(self):
+        """gate_kontrol gated=True donunce kullaniciya bildirim gider."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update, mock_context, patches = _handle_message_mock_setup(
+            mesaj_metni="Python fonksiyonlari nasil yazilir detayli anlat",
+            ask_ai_val="Python fonksiyonlari def anahtar kelimesi ile tanimlanir ve parametreleri vardir.",
+        )
+
+        mock_reward = MagicMock()
+        mock_reward.son_smoothed.return_value = 0.85
+        patches["reward_sys"] = patch("handlers.message.reward_sys", mock_reward)
+
+        mock_estore = MagicMock()
+        mock_estore.kaydet_ornek.return_value = None
+        mock_estore.gate_kontrol.return_value = {"gated": True, "new_count": 5}
+        patches["egitim_store"] = patch("handlers.message.egitim_store", mock_estore)
+
+        with (
+            patches["check_auth"],
+            patches["log_yaz"],
+            patches["rate_limit_kontrol"],
+            patches["injection_kontrol"],
+            patches["onay_kontrol"],
+            patches["ask_ai"],
+            patches["egitim_onay_kontrol"],
+            patches["kullanici_soru_kaydet"],
+            patches["chat_id_kaydet"],
+            patches["memory"],
+            patches["egitim"],
+            patches["reward_sys"],
+            patches["etm"],
+            patches["egitim_store"],
+        ):
+            asyncio.run(hm.handle_message(mock_update, mock_context))
+
+        # Gate bildirimi gonderildi
+        cagrilar = [c[0][0] for c in mock_update.message.reply_text.call_args_list]
+        assert any("egitim" in c.lower() or "inceleme" in c.lower() for c in cagrilar)
+
+
+class TestSesliMesajHandler:
+    """sesli_mesaj_handler() dallarini test eder (satir 455-537)."""
+
+    def test_ses_aktif_degil_uyari_mesaji(self):
+        """SES_AKTIF=False iken uyari mesaji gonderilir."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update = MagicMock()
+        mock_update.message.chat_id = 6481156818
+        mock_update.message.reply_text = AsyncMock()
+
+        mock_context = MagicMock()
+
+        with (
+            patch.object(hm, "check_auth", return_value=True),
+            patch.object(hm, "SES_AKTIF", False),
+        ):
+            asyncio.run(hm.sesli_mesaj_handler(mock_update, mock_context))
+
+        cagri = mock_update.message.reply_text.call_args[0][0]
+        assert "aktif degil" in cagri.lower() or "Sesli" in cagri
+
+    def test_ses_yetkisiz_kullanici(self):
+        """Yetkisiz kullanici sesli mesaj handler'a giremez."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update = MagicMock()
+        mock_update.message.chat_id = 9999
+        mock_update.message.reply_text = AsyncMock()
+
+        mock_context = MagicMock()
+
+        with (
+            patch.object(hm, "check_auth", return_value=False),
+            patch.object(hm, "log_yaz"),
+        ):
+            asyncio.run(hm.sesli_mesaj_handler(mock_update, mock_context))
+
+        cagri = mock_update.message.reply_text.call_args[0][0]
+        assert "yetki" in cagri.lower()
+
+    def test_ses_basarili_akis(self):
+        """SES_AKTIF=True ve basarili STT pipeline → AI yaniti gonderilir."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update = MagicMock()
+        mock_update.message.chat_id = 6481156818
+        mock_update.message.reply_text = AsyncMock()
+        mock_update.message.voice.file_id = "test_file_id"
+
+        mock_context = MagicMock()
+        mock_dosya = MagicMock()
+        mock_dosya.download_to_drive = AsyncMock()
+        mock_context.bot.get_file = AsyncMock(return_value=mock_dosya)
+
+        mock_ses = MagicMock()
+        mock_ses.isleme_pipeline.return_value = {
+            "basarili": True,
+            "metin": "Bu bir test sesidir",
+            "hata": None,
+        }
+
+        with (
+            patch.object(hm, "check_auth", return_value=True),
+            patch.object(hm, "SES_AKTIF", True),
+            patch.object(hm, "ses_plugin", mock_ses),
+            patch.object(hm, "BASE_DIR", MagicMock(__truediv__=MagicMock(return_value=MagicMock(parent=MagicMock())))),
+            patch.object(hm, "ask_ai", new=AsyncMock(return_value="AI yaniti burada.")),
+            patch.object(hm, "memory"),
+            patch.object(hm, "egitim"),
+            patch.object(hm, "reward_sys"),
+            patch.object(hm, "log_yaz"),
+        ):
+            asyncio.run(hm.sesli_mesaj_handler(mock_update, mock_context))
+
+        # AI yaniti gonderildi
+        cagrilar = [c[0][0] for c in mock_update.message.reply_text.call_args_list]
+        assert any("AI yaniti" in c for c in cagrilar)
+
+    def test_ses_stt_anlasilamadi(self):
+        """STT basarisiz: anlasilamadi hatasi → uyari mesaji."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update = MagicMock()
+        mock_update.message.chat_id = 6481156818
+        mock_update.message.reply_text = AsyncMock()
+        mock_update.message.voice.file_id = "test_file_id"
+
+        mock_context = MagicMock()
+        mock_dosya = MagicMock()
+        mock_dosya.download_to_drive = AsyncMock()
+        mock_context.bot.get_file = AsyncMock(return_value=mock_dosya)
+
+        mock_ses = MagicMock()
+        mock_ses.isleme_pipeline.return_value = {
+            "basarili": False,
+            "metin": "",
+            "hata": "anlasilamadi",
+        }
+
+        with (
+            patch.object(hm, "check_auth", return_value=True),
+            patch.object(hm, "SES_AKTIF", True),
+            patch.object(hm, "ses_plugin", mock_ses),
+            patch.object(hm, "BASE_DIR", MagicMock(__truediv__=MagicMock(return_value=MagicMock(parent=MagicMock())))),
+            patch.object(hm, "log_yaz"),
+        ):
+            asyncio.run(hm.sesli_mesaj_handler(mock_update, mock_context))
+
+        cagrilar = [c[0][0] for c in mock_update.message.reply_text.call_args_list]
+        assert any("anlayamadim" in c.lower() or "net" in c.lower() for c in cagrilar)
+
+    def test_ses_stt_genel_hata(self):
+        """STT basarisiz: genel hata → hata mesaji."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update = MagicMock()
+        mock_update.message.chat_id = 6481156818
+        mock_update.message.reply_text = AsyncMock()
+        mock_update.message.voice.file_id = "test_file_id"
+
+        mock_context = MagicMock()
+        mock_dosya = MagicMock()
+        mock_dosya.download_to_drive = AsyncMock()
+        mock_context.bot.get_file = AsyncMock(return_value=mock_dosya)
+
+        mock_ses = MagicMock()
+        mock_ses.isleme_pipeline.return_value = {
+            "basarili": False,
+            "metin": "",
+            "hata": "codec_error",
+        }
+
+        with (
+            patch.object(hm, "check_auth", return_value=True),
+            patch.object(hm, "SES_AKTIF", True),
+            patch.object(hm, "ses_plugin", mock_ses),
+            patch.object(hm, "BASE_DIR", MagicMock(__truediv__=MagicMock(return_value=MagicMock(parent=MagicMock())))),
+            patch.object(hm, "log_yaz"),
+        ):
+            asyncio.run(hm.sesli_mesaj_handler(mock_update, mock_context))
+
+        cagrilar = [c[0][0] for c in mock_update.message.reply_text.call_args_list]
+        assert any("hata" in c.lower() for c in cagrilar)
+
+
+class TestHandleMessageOnayAkisi:
+    """Onay kontrol → _onay_isle akisi (satir 222-238)."""
+
+    def test_onay_onaylandi_islem_calistirilir(self):
+        """Kullanici 'evet' deyince onaylanan komut calistirilir."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update, mock_context, patches = _handle_message_mock_setup(
+            mesaj_metni="evet",
+        )
+        # onay_kontrol → (True, True) = onay bekliyordu ve onaylandi
+        patches["onay_kontrol"] = patch(
+            "handlers.message.onay_kontrol",
+            new=AsyncMock(return_value=(True, True)),
+        )
+        mock_onay_al = patch(
+            "handlers.message.onay_al",
+            return_value={"komut": "gonder", "arguman": "dosya.txt"},
+        )
+        mock_onay_temizle = patch("handlers.message.onay_temizle")
+
+        with (
+            patches["check_auth"],
+            patches["log_yaz"],
+            patches["rate_limit_kontrol"],
+            patches["injection_kontrol"],
+            patches["onay_kontrol"],
+            patches["kullanici_soru_kaydet"],
+            patches["chat_id_kaydet"],
+            mock_onay_al,
+            mock_onay_temizle,
+        ):
+            asyncio.run(hm.handle_message(mock_update, mock_context))
+
+        cagrilar = [c[0][0] for c in mock_update.message.reply_text.call_args_list]
+        assert any("onaylandi" in c.lower() or "Islem" in c for c in cagrilar)
+
+    def test_onay_iptal_edildi(self):
+        """Kullanici 'hayir' deyince islem iptal mesaji gonderilir."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update, mock_context, patches = _handle_message_mock_setup(
+            mesaj_metni="hayir",
+        )
+        patches["onay_kontrol"] = patch(
+            "handlers.message.onay_kontrol",
+            new=AsyncMock(return_value=(True, False)),
+        )
+
+        with (
+            patches["check_auth"],
+            patches["log_yaz"],
+            patches["rate_limit_kontrol"],
+            patches["injection_kontrol"],
+            patches["onay_kontrol"],
+            patches["kullanici_soru_kaydet"],
+            patches["chat_id_kaydet"],
+        ):
+            asyncio.run(hm.handle_message(mock_update, mock_context))
+
+        cagrilar = [c[0][0] for c in mock_update.message.reply_text.call_args_list]
+        assert any("iptal" in c.lower() for c in cagrilar)
+
+
+class TestHandleMessageMemnuniyetsizlik:
+    """Memnuniyetsizlik tespiti (satir 269-282)."""
+
+    def test_memnuniyetsizlik_basarisiz_kaydedilir(self):
+        """'yanlis' mesaji gelince onceki yanit basarisiz kaydedilir."""
+        import asyncio
+
+        import handlers.message as hm
+
+        mock_update, mock_context, patches = _handle_message_mock_setup(
+            mesaj_metni="yanlis cevap verdin",
+            ask_ai_val="Ozur dilerim, tekrar deneyeyim.",
+        )
+
+        # _son_yanit'a onceki bir cevap koy
+        son_yanit_data = {
+            6481156818: {
+                "soru": "Python nedir?",
+                "yanit": "Python bir yilandir.",
+                "gorev_turu": "sohbet",
+            }
+        }
+        mock_egitim = MagicMock()
+
+        with (
+            patches["check_auth"],
+            patches["log_yaz"],
+            patches["rate_limit_kontrol"],
+            patches["injection_kontrol"],
+            patches["onay_kontrol"],
+            patches["ask_ai"],
+            patches["egitim_onay_kontrol"],
+            patches["kullanici_soru_kaydet"],
+            patches["chat_id_kaydet"],
+            patches["memory"],
+            patch("handlers.message.egitim", mock_egitim),
+            patches["reward_sys"],
+            patches["etm"],
+            patches["egitim_store"],
+            patch.object(hm, "_son_yanit", son_yanit_data),
+        ):
+            asyncio.run(hm.handle_message(mock_update, mock_context))
+
+        mock_egitim.basarisiz_kaydet.assert_called_once()
