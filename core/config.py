@@ -32,14 +32,41 @@ def log_yaz(mesaj: str, seviye: str = "INFO"):
 
 # ── Uptime ────────────────────────────────────────────────────
 BASLANGIC_ZAMANI = None
+_UPTIME_DOSYA = BASE_DIR / "data" / "uptime.json"
 
 
 def baslangic_zamanini_kaydet():
+    """Bot baslatilinca cagrilir — zamani hem bellek hem diske yazar."""
     global BASLANGIC_ZAMANI
     BASLANGIC_ZAMANI = datetime.now()
+    try:
+        import json
+
+        _UPTIME_DOSYA.parent.mkdir(parents=True, exist_ok=True)
+        _UPTIME_DOSYA.write_text(
+            json.dumps({"baslangic": BASLANGIC_ZAMANI.isoformat()}), encoding="utf-8"
+        )
+    except Exception:
+        pass
+
+
+def _uptime_diskten_oku():
+    """BASLANGIC_ZAMANI None ise diskten okumaya calis."""
+    global BASLANGIC_ZAMANI
+    try:
+        import json
+
+        if _UPTIME_DOSYA.exists():
+            veri = json.loads(_UPTIME_DOSYA.read_text(encoding="utf-8"))
+            BASLANGIC_ZAMANI = datetime.fromisoformat(veri["baslangic"])
+    except Exception:
+        pass
 
 
 def uptime_hesapla() -> str:
+    """Uptime stringi doner — bellekte yoksa diskten okur."""
+    if BASLANGIC_ZAMANI is None:
+        _uptime_diskten_oku()
     if BASLANGIC_ZAMANI is None:
         return "Bilinmiyor"
     gecen = datetime.now() - BASLANGIC_ZAMANI
