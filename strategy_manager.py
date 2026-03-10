@@ -125,7 +125,7 @@ class StrategyManager:
             return "Henuz model performans verisi yok. (En az 5 gorev gerekli)"
 
         satirlar = ["Model Performanslari:"]
-        gorev_turlerine_gore = {}
+        gorev_turlerine_gore: dict[str, list] = {}
 
         for anahtar, p in self.model_performans.items():
             tur = p["gorev_turu"]
