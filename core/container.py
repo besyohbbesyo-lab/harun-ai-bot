@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import logging
 from collections.abc import Callable
-from typing import Any, Dict, Optional, Type
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -90,7 +90,7 @@ class Container:
 
     def tum_isimler(self) -> list:
         """Tum kayitli servis isimlerini doner."""
-        isimler = set()
+        isimler: set[str] = set()
         isimler.update(self._singletonlar.keys())
         isimler.update(self._fabrikalar.keys())
         isimler.update(self._instance_lar.keys())
