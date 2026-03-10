@@ -18,7 +18,7 @@ def _run(code_runner, code: str, name: str) -> dict:
 
 
 def run_selftests(code_runner) -> dict:
-    tests = []
+    tests: list[dict[str, object]] = []
 
     def expect_pass(name, code):
         r = _run(code_runner, code, f"selftest_{len(tests)+1}_{name.replace(' ','_')}")
