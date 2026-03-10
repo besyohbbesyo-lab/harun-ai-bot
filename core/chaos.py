@@ -12,6 +12,8 @@ import random
 import time
 from collections.abc import Callable
 
+from typing import Any
+
 from core.config import log_yaz
 
 # ── Chaos sadece staging/test ortaminda aktif ─────────────────
@@ -106,7 +108,7 @@ class ChaosMotoru:
             time.sleep(sure)
 
     def istatistik(self) -> dict:
-        ist = dict(self._istatistik)
+        ist: dict[str, Any] = dict(self._istatistik)
         ist["aktif"] = self.aktif
         ist["hata_olasiligi"] = self.hata_olasiligi
         return ist
