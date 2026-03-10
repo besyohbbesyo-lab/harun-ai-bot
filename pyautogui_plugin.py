@@ -65,7 +65,7 @@ OTP_UZUNLUK = 6  # secrets.token_hex(3) → 6 hex karakter
 
 MAX_ACTIONS = 15
 WINDOW_SECONDS = 30
-_action_log = []
+_action_log: list[float] = []
 
 
 def rate_limit_ok():
