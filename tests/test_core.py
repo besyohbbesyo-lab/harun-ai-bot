@@ -77,7 +77,8 @@ class TestConfig:
         from core.config import uptime_hesapla
 
         c.BASLANGIC_ZAMANI = None
-        assert uptime_hesapla() == "Bilinmiyor"
+        with patch.object(c, "_uptime_diskten_oku", return_value=None):
+            assert uptime_hesapla() == "Bilinmiyor"
 
     def test_uptime_hesapla(self):
         from core.config import baslangic_zamanini_kaydet, uptime_hesapla
