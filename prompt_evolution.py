@@ -114,7 +114,7 @@ class PromptEvolution:
 
         # Thompson Sampling
         en_iyi_id = None
-        en_iyi_skor = -1
+        en_iyi_skor = -1.0
 
         for pid, p in aktif_promptlar:
             alpha = p["basarili"] + 1
