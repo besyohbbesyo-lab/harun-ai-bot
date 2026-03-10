@@ -10,6 +10,7 @@ import time
 from collections import deque
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 try:
     from bot_config import CFG
@@ -42,7 +43,7 @@ MAX_LOG_SATIR = int(_log_cfg.get("max_satir", 10000))
 SEVIYELER = {"DEBUG": 10, "INFO": 20, "WARN": 30, "ERROR": 40, "CRITICAL": 50}
 
 # Son loglar (dashboard icin)
-_son_loglar = deque(maxlen=100)
+_son_loglar: deque[dict[str, Any]] = deque(maxlen=100)
 
 
 def _seviye_num(seviye: str) -> int:
@@ -75,7 +76,7 @@ class BotLogger:
             except Exception:
                 pass
 
-        kayit = {
+        kayit: dict[str, Any] = {
             "ts": datetime.now().isoformat(timespec="seconds"),
             "seviye": seviye,
             "mesaj": mesaj,
