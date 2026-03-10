@@ -267,7 +267,7 @@ def test_al_veya_olustur(test_adi: str) -> ABTestMotoru:
 
 
 # Pytest bu yardimci fonksiyonu test olarak toplamasin.
-test_al_veya_olustur.__test__ = False
+setattr(test_al_veya_olustur, "__test__", False)
 
 
 def kullaniciyi_varyanta_zorla(test_adi: str, kullanici_id: str | int, varyant_adi: str) -> None:
