@@ -34,7 +34,7 @@ except Exception:
         ("llama-3.1-8b-instant", 2000, 1),
         ("meta-llama/llama-4-scout-17b-16e-instruct", 2000, 2),
     ]
-    TASK_MODEL_PREF: dict[str, int] = {
+    TASK_MODEL_PREF: dict[str, int] = {  # type: ignore[no-redef]
         "kod": 0,
         "sunum": 0,
         "word": 0,
