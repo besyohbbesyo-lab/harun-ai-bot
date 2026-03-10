@@ -99,7 +99,7 @@ def komut_izinli_mi(user_id: int, komut: str) -> bool:
     """Kullanicinin bu komutu calistirma yetkisi var mi?"""
     rol = rol_al(user_id)
     rol_bilgi = ROLLER.get(rol, ROLLER["readonly"])
-    izinli_komutlar = rol_bilgi["komutlar"]
+    izinli_komutlar = rol_bilgi["komutlar"]  # type: ignore[index]
 
     # Admin her seyi yapabilir
     if izinli_komutlar == "*":
