@@ -84,7 +84,7 @@ def api_durumu() -> list:
         if not ROTATOR_AKTIF:
             return []
         sonuc = []
-        for p in rotator.providers:
+        for p in rotator.providers:  # type: ignore[attr-defined]
             sonuc.append(
                 {
                     "isim": p["isim"],
@@ -154,7 +154,7 @@ def hata_trend_verisi() -> dict:
         hata_dosyasi = BASE_DIR / "hata_verisi.jsonl"
         if not hata_dosyasi.exists():
             return {"etiketler": [], "degerler": []}
-        hata_sayac = {}
+        hata_sayac: dict[str, int] = {}
         with open(hata_dosyasi, encoding="utf-8") as f:
             for satir in f:
                 satir = satir.strip()
@@ -180,7 +180,7 @@ def model_kullanim_verisi() -> dict:
             return {"etiketler": [], "degerler": []}
         with open(model_dosyasi, encoding="utf-8") as f:
             data = json.load(f)
-        model_toplam = {}
+        model_toplam: dict[str, int] = {}
         for anahtar, bilgi in data.items():
             model = bilgi.get("model", "Bilinmiyor")
             toplam = bilgi.get("toplam", 0)
@@ -270,7 +270,7 @@ def latency_verisi() -> dict:
 
         # Model performans dosyasindan motor bazli sure hesapla
         model_dosyasi = BASE_DIR / "model_performans.json"
-        motor_sure = {}
+        motor_sure: dict[str, list[float]] = {}
         if model_dosyasi.exists():
             with open(model_dosyasi, encoding="utf-8") as f:
                 perf = json.load(f)
@@ -309,7 +309,7 @@ def egitim_filtre_verisi() -> dict:
             toplam_hata = sum(1 for _ in open(hata_dosyasi, encoding="utf-8"))
 
         # Hata kategori dagilimi (ASAMA 16)
-        kategori_sayac = {}
+        kategori_sayac: dict[str, int] = {}
         if hata_dosyasi.exists():
             with open(hata_dosyasi, encoding="utf-8") as f:
                 for satir in f:
