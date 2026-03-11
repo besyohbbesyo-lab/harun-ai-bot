@@ -191,7 +191,7 @@ Baska hicbir sey yazma."""
                 if komut == "tikla" and isinstance(parametre, list):
                     sonuc = otomasyon.tikla(parametre[0], parametre[1])
                 elif komut == "yaz":
-                    sonuc = otomasyon.tur_yaz(str(parametre))
+                    sonuc = otomasyon.tur_yaz(str(parametre))  # type: ignore[attr-defined]
                 elif komut == "tus_bas":
                     sonuc = otomasyon.tus_bas(str(parametre))
                 elif komut == "program_ac":
@@ -199,7 +199,7 @@ Baska hicbir sey yazma."""
                 elif komut == "web_git":
                     sonuc = otomasyon.web_git(str(parametre))
                 elif komut == "enter":
-                    sonuc = otomasyon.enter_bas()
+                    sonuc = otomasyon.enter_bas()  # type: ignore[attr-defined]
                 else:
                     sonuc = f"Bilinmeyen komut: {komut}"
 
