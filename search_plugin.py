@@ -1,7 +1,7 @@
 # search_plugin.py
 import re
 
-import requests
+import requests  # type: ignore[import-untyped]
 from bs4 import BeautifulSoup
 from ddgs import DDGS
 
