@@ -279,7 +279,7 @@ def ask_groq(prompt: str, gorev_turu: str = "genel") -> str:
                 pass
 
             # CircuitBreaker başarı bildir
-            with cb_groq._lock if hasattr(cb_groq._lock, "__enter__") else open(os.devnull):
+            with cb_groq._lock if hasattr(cb_groq._lock, "__enter__") else open(os.devnull):  # type: ignore[union-attr]
                 pass
             cb_groq.failures = 0
             cb_groq.state = cb_groq.CLOSED
