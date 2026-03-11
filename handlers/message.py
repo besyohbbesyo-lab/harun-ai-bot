@@ -129,7 +129,7 @@ async def _onay_isle(bekleyen: dict) -> str:
     elif komut == "yaz":
         if not OTOMASYON_AKTIF:
             return "Otomasyon aktif degil."
-        return otomasyon.tur_yaz(arg)
+        return otomasyon.tur_yaz(arg)  # type: ignore[attr-defined]
 
     elif komut == "tus":
         if not OTOMASYON_AKTIF:
@@ -271,7 +271,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         memnun_degil = any(k in mesaj_lower for k in MENMNUNIYETSIZLIK_KELIMELERI)
         if memnun_degil and user_id in _son_yanit:
             onceki = _son_yanit[user_id]
-            egitim.basarisiz_kaydet(
+            egitim.basarisiz_kaydet(  # type: ignore[attr-defined]
                 soru=onceki["soru"],
                 yanlis_cevap=onceki["yanit"],
                 duzeltilmis_cevap="",  # kullanici duzeltme yazmamis
@@ -315,7 +315,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         memory.gorev_kaydet(
             mesaj[:100], response[:200], "sohbet", reward=reward_sys.son_smoothed(), basari=True
         )
-        egitim.kaydet(mesaj, response, "sohbet", reward=reward_sys.son_smoothed())
+        egitim.kaydet(mesaj, response, "sohbet", reward=reward_sys.son_smoothed())  # type: ignore[attr-defined]
     except Exception:
         pass
 
@@ -512,7 +512,7 @@ async def sesli_mesaj_handler(update: Update, context: ContextTypes.DEFAULT_TYPE
                 reward=reward_sys.son_smoothed(),
                 basari=True,
             )
-            egitim.kaydet(
+            egitim.kaydet(  # type: ignore[attr-defined]
                 algilanan_metin, response, "sesli_mesaj", reward=reward_sys.son_smoothed()
             )
         except Exception:
