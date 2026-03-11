@@ -3,7 +3,7 @@ import io
 from datetime import datetime
 from pathlib import Path
 
-import requests
+import requests  # type: ignore[import-untyped]
 from docx import Document
 from pptx import Presentation
 from pptx.util import Inches, Pt
