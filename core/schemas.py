@@ -104,19 +104,19 @@ class ProviderConfig:
         }
 
     @classmethod
-    def from_dict(cls, d: dict) -> ProviderConfig:
+    def from_dict(cls, d: dict) -> ProviderConfig:  # type: ignore[valid-type]
         """
         api_rotator'dan gelen sozlugu ProviderConfig'e donustur.
         'name' veya 'isim' anahtarini otomatik alir.
         """
-        name = d.get("name") or d.get("isim") or "bilinmiyor"
+        name = d.get("name") or d.get("isim") or "bilinmiyor"  # type: ignore[attr-defined]
         return cls(
             name=name,
-            model=d.get("model", ""),
-            api_key=d.get("api_key", ""),
-            max_tokens=int(d.get("max_tokens", 4096)),
-            temperature=float(d.get("temperature", 0.7)),
-            timeout=float(d.get("timeout", 30.0)),
+            model=d.get("model", ""),  # type: ignore[attr-defined]
+            api_key=d.get("api_key", ""),  # type: ignore[attr-defined]
+            max_tokens=int(d.get("max_tokens", 4096)),  # type: ignore[attr-defined]
+            temperature=float(d.get("temperature", 0.7)),  # type: ignore[attr-defined]
+            timeout=float(d.get("timeout", 30.0)),  # type: ignore[attr-defined]
         )
 
 
@@ -159,7 +159,7 @@ class OperationLog:
     def is_done(self, operation_id: str) -> bool:
         return operation_id in self._db
 
-    def execute_once(self, op_id: str, fn: callable, *args, **kwargs) -> Any:
+    def execute_once(self, op_id: str, fn: Any, *args, **kwargs) -> Any:
         """
         op_id ile isaretlenmis islemi yalnizca bir kez calistir.
         Daha once yapilmissa onceki sonucu dondur.
