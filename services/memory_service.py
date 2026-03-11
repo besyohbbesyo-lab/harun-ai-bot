@@ -28,7 +28,7 @@ class MemoryService:
         """Konuşmayı hafızaya kaydet."""
         try:
             memory.gorev_kaydet(
-                gorev=prompt[:200], sonuc=response[:500], basari=reward > 0.5, sure=0, reward=reward
+                gorev=prompt[:200], sonuc=response[:500], basari=reward > 0.5, sure=0, reward=reward  # type: ignore[call-arg]
             )
             return ToolResult.basari({"kayit": "ok"})
         except Exception as e:
@@ -37,7 +37,7 @@ class MemoryService:
     def bilgi_kaydet(self, baslik: str, icerik: str, kategori: str = "genel") -> ToolResult:
         """Kalıcı bilgi olarak kaydet (LTM)."""
         try:
-            memory.bilgi_ekle(baslik=baslik, icerik=icerik, kategori=kategori)
+            memory.bilgi_ekle(baslik=baslik, icerik=icerik, kategori=kategori)  # type: ignore[attr-defined]
             return ToolResult.basari({"baslik": baslik})
         except Exception as e:
             return ToolResult.hata(f"Bilgi kayıt hatası: {e}")
