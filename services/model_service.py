@@ -64,7 +64,7 @@ class ModelService:
 
         provider_listesi = []
         try:
-            for p in rotator.providers:
+            for p in rotator.providers:  # type: ignore[attr-defined]
                 pname = p.get("name") or p.get("isim", "?")
                 provider_listesi.append(
                     {
