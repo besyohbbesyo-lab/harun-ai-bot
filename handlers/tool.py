@@ -100,7 +100,7 @@ SLAYT5_ICERIK: icerik
 Turkce yaz. Her icerik en az 3 cumle olsun."""
         llama_response = await ask_ai(prompt, gorev_turu="sunum")
         slides = []
-        current_slide = {}
+        current_slide: dict[str, str] = {}
         for line in llama_response.split("\n"):
             if "_BASLIK:" in line:
                 if current_slide and "baslik" in current_slide:
@@ -177,7 +177,7 @@ async def plan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             pass
 
     try:
-        sonuc = await planner.run(gorev, ilerleme)
+        sonuc = await planner.run(gorev, ilerleme)  # type: ignore[name-defined]
 
         # Ozet mesaji
         ozet_mesaj = (
