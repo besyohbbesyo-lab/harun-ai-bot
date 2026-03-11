@@ -9,6 +9,7 @@ Proje KB'sini oluşturur.
 import json
 import re
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(".")
 KB_PATH = ROOT / "rag" / "kb.jsonl"
@@ -60,7 +61,7 @@ def smart_chunk(text: str, source: str, max_chars=MAX_CHUNK):
     if source.endswith(".py"):
         # def / class sınırlarında böl
         lines = text.split("\n")
-        current = []
+        current: Any = []
         current_len = 0
 
         for line in lines:
@@ -95,7 +96,7 @@ def smart_chunk(text: str, source: str, max_chars=MAX_CHUNK):
     else:
         # Paragraf bazlı bölme
         paragraphs = re.split(r"\n{2,}", text)
-        current = ""
+        current: Any = ""  # type: ignore[no-redef]
         for para in paragraphs:
             if len(current) + len(para) + 2 <= max_chars:
                 current = (current + "\n\n" + para).strip()
@@ -107,7 +108,7 @@ def smart_chunk(text: str, source: str, max_chars=MAX_CHUNK):
             chunks.append(current.strip())
 
     # Çok kısa chunk'ları bir öncekiyle birleştir
-    merged = []
+    merged: list[str] = []
     for c in chunks:
         if merged and len(c) < MIN_CHUNK and len(merged[-1]) + len(c) < max_chars:
             merged[-1] = merged[-1] + "\n" + c
