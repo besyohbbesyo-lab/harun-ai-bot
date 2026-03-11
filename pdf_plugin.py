@@ -1,7 +1,7 @@
 # pdf_plugin.py
 from pathlib import Path
 
-import requests
+import requests  # type: ignore[import-untyped]
 from ddgs import DDGS
 
 
